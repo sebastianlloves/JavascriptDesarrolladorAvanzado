@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 15px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 1.2rem;
+}
+
+.propagacion div,
+.stopPropagation div,
+.delegacion div {
+  padding: 4rem;
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1.2rem;
+}
+
+.uno {
+  background-color: yellow;
+}
+
+.dos {
+  background-color: gold;
+}
+
+.tres {
+  background-color: lightyellow;
+}

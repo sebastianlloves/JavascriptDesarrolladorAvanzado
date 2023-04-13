@@ -1,0 +1,18 @@
+form{
+    height: 175px;
+}
+
+.admin{
+    background-color: #333;
+    color: rgb(214, 214, 214);
+}
+
+.editor{
+    background-color: black;
+    color: crimson;
+}
+
+.user{
+    background-color: cadetblue;
+    color: chartreuse;
+}

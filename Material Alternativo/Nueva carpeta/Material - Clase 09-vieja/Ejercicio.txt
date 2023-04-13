@@ -1,0 +1,9 @@
+Ejercicio resuelto en archivo ejercicios.js
+
+/* 
+    Armar una Clase Empleado que tenga las propieades nombre y puesto con sus respectivos getters y setters. Agregar los métodos necesarios para manejar un CRUD (Create, Read, Update, Delete - Crear, Leer, Modificar, Eliminar).
+    Create => Debe crear una instancia de la Clase Empleado y guardarlo en un array. Cada nuevo empleado debe tener un id único
+    Read => Debe permitir la lectura de las propiedades
+    Update => Debe modificar las propieades
+    Delete => Debe eleminar al empleado del array    
+*/

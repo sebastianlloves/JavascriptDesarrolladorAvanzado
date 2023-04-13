@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>JavaScript Avanzado</title>
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar-->
+        <div class="border-end bg-white" id="sidebar-wrapper">
+            <span class="sidebar-heading border-bottom bg-light">Contacto: <a
+                    href="mailto:anahiforesi.educacionit@gmail.com">Anahí Foresi</a></span>
+            <ul class="list-group list-group-flush">
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="index.html">Patrones
+                    de Diseño</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3"
+                    href="ejercicios.html">Ejercicios</a>
+            </ul>
+        </div>
+        <!-- Page content wrapper-->
+        <div id="page-content-wrapper">
+            <!-- Top navigation-->
+            <nav id='barra' class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <div class="container-fluid">
+                    <button class="btn btn-primary" id="sidebarToggle">Temas</button>
+                    <h1>Clase 10</h1>
+                </div>
+            </nav>
+            <!-- Page content-->
+            <div class="container-fluid">
+                <h2 class="mt-4">Patrones de Diseño</h2>
+                <p>
+                    Los patrones de diseño pueden describirse como: <br>
+                    <q>Una solución estandarizada y reutilizable que nos permite solucionar problemas comunes cuando
+                        desarrollamos cualquier tipo de software.</q>
+                    <br>
+                    Debemos entender que un patrón de diseño nos permite resolver problemas con soluciones
+                    estandarizadas, y por lo tanto acelerar el desarrollo ya que existe una solución establecida.
+                    <br>
+                    Otra cosa que debemos tener en cuenta es no excedernos en el uso de patrones de diseño ya que esto
+                    podría volverse en nuestra contra aumentando la complejidad de nuestro software.
+                    <br>
+                    Los patrones de diseño pueden separarse en 3 grupos:
+                </p>
+                <ul>
+                    <li>Patrones creacionales - permiten la creación de objetos, ofreciendo flexibilidad y reutilización.
+                        <ul>
+                            <li>Patrón Módulo: Con este patrón podemos encapsular toda la lógica de nuestra aplicación, ya que dentro del módulo estarán declaradas todas las variables y métodos. </li>
+                            <li>Patrón Singleton: Este patrón nos ofrece una instancia única y proporciona un acceso global a dicha instancia.</li>
+                        </ul>
+                    </li>
+                    <li>Patrones de estructura - patrones que hacen referencia a la composición de objetos, y que nos simplifica la relación entre ellos.</li>
+                    <li>Patrones de comportamiento - patrones que se encargan de la comunicación entre objetos.
+                        <ul>
+                            <li>Patrón observador: Este patrón nos permite tener el control y la gestión de eventos mediante dos objetos, ya que uno de los objetos se encarga de publicar los eventos y el otro suscribirse.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3 class="mt-4">Patrón Módulo</h3>
+                <p>
+                    En JavaScript no existe el concepto de scope privado porque todos los elementos se almacenan dentro del Objeto Global, sin embargo es posible simularlo recurriendoa a las Funciones Anónimas Autoinvocadas
+                </p>
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-lg-2">
+                        <div class="col mb-3">
+                            <img src="assets/modulo.PNG" alt="" width="100%">
+                        </div>
+                        <div class="col">
+                            <img src="assets/modulo2.PNG" alt="" width="100%">
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    De esta forma es posible trabajar en distintos archivos y exponer sólo aquellos datos que sean necesarios compartir, pero esto acarreba un problema y es que todos los archivos debían estar incorporados a los distintas páginas HTML que los requerian generando una sobrecarga de peticiones a los servidores y relentizando el flujo de ejecución. <br>
+                    A partir de ECMAScript 6, se introducen los conceptos de módulos de exportación (export) e importación (import). Para utilizarlos hay que agregar el atributo type="module" a los correspondientes scripts habilitando así su uso y enviando la carga de los mismos hasta el final de la transferencia ayudando así a evitar la sobrecarga de preticiones y la relentización del flujo de ejecución.
+                </p>
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-lg-3">
+                        <div class="col mb-3">
+                            <img src="assets/moduloES6.PNG" alt="" width="100%">
+                        </div>
+                        <div class="col mb-3">
+                            <img src="assets/moduloES6-1.PNG" alt="" width="100%">
+                        </div>
+                        <div class="col">
+                            <img src="assets/moduloES6-2.PNG" alt="" width="100%">
+                        </div>
+                    </div>
+                </div>
+                <h3 class="mt-4">Patrón  Singleton</h3>
+                <p>
+                    El patrón singleton está pensado para limitir la cantidad de instancias de una clase a una. <br>
+                    En JavaScript puede ser muy útil a la hora de limitir las llamadas AJAX para evitar una sobrecarga de peticiones. <br>
+                    El patrón singleton es utilizado por algunos frameworks como el caso de Angular.
+                </p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="assets/singleton.PNG" alt="" width="421px">
+                        </div>
+                    </div>
+                </div>
+                <h3 class="mt-4">Patrón Observador (pub sub)</h3>
+                <p>
+                    El patrón observador (pub sub) se caracteriza por generar un objeto (pub) que genere una intereacción y otros objetos (sub) que "observen" esa interacción y realizen una tarea en respuesta. <br>
+                    Este patrón es utilizado por frameworks reactivos como React.
+                </p>
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-lg-3">
+                        <div class="col mb-3">
+                            <img src="assets/observador.PNG" alt="" width="100%">
+                        </div>
+                        <div class="col mb-3">
+                            <img src="assets/observador1.PNG" alt="" width="100%">
+                        </div>
+                        <div class="col">
+                            <img src="assets/observador2.PNG" alt="" width="100%">
+                        </div>
+                    </div>
+                </div>
+
+
+                <footer class="text-end">
+                    <small>Informacion Adicional Patrones: <a href="https://www.youtube.com/watch?v=_ogUMwl7HCEs">Módulo</a> | <a href="https://www.youtube.com/watch?v=ui-DFqBJ5Kw">Singleton</a> | <a href="https://www.youtube.com/watch?v=pReYTx2frTQ">Observer</a></small>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

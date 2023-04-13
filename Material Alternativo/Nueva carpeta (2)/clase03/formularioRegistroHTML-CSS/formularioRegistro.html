@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario Registro</title>
+    <link rel="stylesheet" href="css/formulario.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Ejercicio Clase 03</h1>
+    </header>
+    <main>
+      <form id="registro">
+        <label for="Nombre usuario"
+          >Usuario:
+          <input
+            type="text"
+            name="user"
+            id="user"
+            title="Sólo letras y/o números. Si espacios"
+          />
+        </label>
+        <label for="Email"
+          >Email:
+          <input
+            type="email"
+            name="emailRegistro"
+            id="emailRegistro"
+            title="Mail inválido"
+          />
+        </label>
+        <label for="Repita Email"
+          >Repita Email:
+          <input
+            type="email"
+            name="emailRepetir"
+            id="emailRepetir"
+            title="Mail diferente"
+          />
+        </label>
+        <label for="password"
+          >Contraseña:
+          <input
+            type="password"
+            name="pass"
+            id="pass"
+            title="1 min, 1 mayus, 1 num y 1 de @$?_\-¡!"
+          />
+        </label>
+        <label for="repetir password"
+          >Repetir Contraseña:
+          <input
+            type="password"
+            name="passRepetir"
+            id="passRepetir"
+            title="Pass diferente"
+          />
+        </label>
+        <button type="submit" id="enviar1">Enviar</button>
+      </form>
+    </main>
+    <footer>
+      <span>&copy; Copyright</span>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>JavaScript Avanzado</title>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar-->
+      <div class="border-end bg-white" id="sidebar-wrapper">
+        <span class="sidebar-heading border-bottom bg-light"
+          >Contacto:
+          <a href="mailto:anahiforesi.educacionit@gmail.com"
+            >Anahí Foresi</a
+          ></span
+        >
+        <ul class="list-group list-group-flush">
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="index.html"
+            >Node.js</a
+          >
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="vite.html"
+            >ViteJS</a
+          >
+        </ul>
+      </div>
+      <!-- Page content wrapper-->
+      <div id="page-content-wrapper">
+        <!-- Top navigation-->
+        <nav
+          id="barra"
+          class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
+        >
+          <div class="container-fluid">
+            <button class="btn btn-primary" id="sidebarToggle">Temas</button>
+            <h1>Clase 12</h1>
+          </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container-fluid">
+          <h2 class="mt-4">Node.js</h2>
+          <p>
+            Node.js es un entorno en tiempo de ejecución multiplataforma, de
+            código abierto, para la capa del servidor (pero no limitándose a
+            ello) basado en el lenguaje de programación JavaScript, asíncrono,
+            con E/S de datos en una arquitectura orientada a eventos y basado en
+            el motor V8 de Google. Fue creado con el enfoque de ser útil en la
+            creación de programas de red altamente escalables, como por ejemplo,
+            servidores web. Fue creado por Ryan Dahl en 2009 y su evolución está
+            apadrinada por la empresa Joyent. <br />
+            Node.js adopta para trabajar el Patrón Módulo permitiendo así el
+            encapsulamiento de los distintos componentes de nuestra aplicación
+            lo cual ayuda a la seguridad de la misma, pero hay que tener en
+            cuenta que a la hora de hablar de un módulo en Node.js también
+            podemos estar refiriéndonos a los elementos que propios del entorno
+            de trabajo (equivalente a las API's Web). Para distinguirlos se
+            habla de Módulos Nativos cuando hablamos de elementos propios de
+            Node.js y Módulos cuando hablamos de los distintos archivos js que
+            componen nuestra aplicación. <br />
+            El trabajo con Node.js nos abre la puerta al mundo del back-end
+            porque, al estar pensado para el trabajo con servidores, podemos
+            configurar nuestros propios servidores y conexiones con bases de
+            datos. Pero esto no es todo, Node.js es también una excelente
+            herramienta para el desarrollo front-end porque nos permite separar
+            nuestros proyectos en dos grandes estructuras conocidas como
+            "Desarrollo" y "Producción" <br />
+            El código de "Desarrollo" es el código con el que vamos a estar
+            trabajando constantemente, mientras que el código de "Producción" es
+            el resultado final, el trabajo terminado. La gran diferencia entre
+            estas estructuras es que el código de "Producción" se crea como
+            resultado de una serie de procesos aplicados al código de
+            "Desarrollo" pensados para mejorar la performance e integración del
+            mismo.
+          </p>
+          <h3 class="mt-4">Inicializando</h3>
+          <p>
+            Al inicializar un proyecto con Node.js vamos a crear un archivo
+            llamado "package.json" que va ser el encargado de almacenar toda la
+            información relativa a las dependencias que utilice nuestro
+            proyecto. Una de las principales ventajas de este archivo es que se
+            puede compartir un proyecto ignorando la carpeta "node_module"
+            (contiene todos los archivos necesarios para cada dependencia y es
+            muy pesada) ya que cualquier persona que reciba nuestro proyecto con
+            su correspondiente "package.json" puede ejecutar el comando npm
+            install para descargar todas las dependencias necesarias
+          </p>
+          <div class="container">
+            <div class="row">
+              <div class="col mb-3">
+                <img src="assets/node.png" alt="" width="100%" class="max" />
+              </div>
+            </div>
+          </div>
+
+          <h2 class="mt-4">Babel</h2>
+          <p>
+            Babel es un transpilador de código JavaScript. Un transpilador se
+            encarga de leer y adecuar código según los deseado. En el caso de
+            Babel, lo que se busca es convertir el código JS escrito en
+            ECMAScript 2015 o superior a versiones anteriores para mejorar la
+            compatibilidad de todas las funciones con los navegadores y evitar
+            así que nuestras páginas no se ejecuten. <br />
+            Con Node.js podemos descargar los módulos de Babel para incorporarlo
+            a nuestros proyectos.
+          </p>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-lg-3">
+              <div class="col mb-3">
+                <img src="assets/babel1.PNG" alt="" width="100%" />
+              </div>
+              <div class="col mb-3">
+                <img src="assets/babel2.PNG" alt="" width="100%" />
+              </div>
+            </div>
+          </div>
+
+          <h2 class="mt-4">Webpack</h2>
+          <p>
+            Webpack es un creador de módulos estáticos para subirlos a la web.
+            Su uso nos permite crear un archivo único, minificado, que contenga
+            toda la lógica de nuestra aplicación mejorando así la velocidad de
+            carga de los archivos en los navegadores. <br />
+            Webpack trabaja con cuatro conceptos básicos:
+          </p>
+          <ul>
+            <li>
+              Entry => archivo desde el que inicia a generar el archivo de
+              Producción
+            </li>
+            <li>Output => archivo de Producción</li>
+            <li>
+              Loaders => paquetes de node que permiten la transformación del
+              código de Desarrollo
+            </li>
+            <li>Plugging => módulos que agregan funcionalidad</li>
+          </ul>
+          <h3 class="mt-4">Instalación</h3>
+          <p>
+            Para usar Webpack hay que instalar los correspondientes paquetes
+            (dependencias) y para ello necesitamos iniciar un proyecto de node
+            (npm init la carpeta del proyecto)
+          </p>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-lg-2">
+              <div class="col mb-3">
+                <img
+                  src="assets/webpack1.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 500px"
+                />
+              </div>
+              <div class="col mb-3">
+                <img
+                  src="assets/webpack2.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 500px"
+                />
+              </div>
+              <div class="col mb-3">
+                <img
+                  src="assets/webpack3.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 500px"
+                />
+              </div>
+            </div>
+          </div>
+          <h3 class="mt-4">Configuración</h3>
+          <p>
+            Trabajar con Webpack es relativamente sencillo pero requiere algunas
+            configuraciones. Las siguientes imágenes muestran la configuración
+            básica para el trabajo front-end que debe implementarse en el
+            archivo "webpack.config.js" (debe crearse dentro de la carpeta que
+            tiene el init de node). Se configuran los ambientes de Desarrollo y
+            Producción indicando tipo de transpilación y compilación de archivos
+            e imágenes y se arma un live-server para facilitar el desarrollo.
+          </p>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-lg-2">
+              <div class="col mb-3">
+                <img
+                  src="assets/webpack.svg"
+                  alt=""
+                  width="100%"
+                  style="max-width: 500px"
+                />
+              </div>
+            </div>
+          </div>
+          <h4 class="mt-4">Dependencias instaladas</h4>
+          <ul>
+            <li>
+              Transpilar JS (Babel) - babel-loader @babel/core @babel/preset-env
+            </li>
+            <li>Inyectar JS en HTML - html-loader html-webpack-plugin</li>
+            <li>Inyectar CSS en HTML - css-loader mini-css-extract-plugin</li>
+            <li>Manejo de archivos - file-loader</li>
+            <li>Compresión de imágenes - image-webpack-loader</li>
+            <li>
+              Live-server - webpack-dev-server (configurado en package.json =>
+              "start": "webpack serve --mode development --open")
+            </li>
+          </ul>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-lg-2">
+              <div class="col mb-3">
+                <img
+                  src="assets/webpack4.PNG"
+                  alt=""
+                  width="100%"
+                  class="max"
+                />
+              </div>
+              <div class="col mb-3">
+                <img
+                  src="assets/webpack5.PNG"
+                  alt=""
+                  width="100%"
+                  class="max"
+                />
+              </div>
+            </div>
+          </div>
+
+          <footer class="text-end">
+            <small
+              >Información Adicional
+              <a href="https://nodejs.org/api/">NodeJS</a> |
+              <a href="https://babeljs.io/docs/en/">Babel</a> |
+              <a href="https://webpack.js.org/concepts/">Webpack</a></small
+            >
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

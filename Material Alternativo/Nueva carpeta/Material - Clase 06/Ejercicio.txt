@@ -1,0 +1,3 @@
+Ejercicio resuelto en archivo ejercicios.js
+
+//Realizar una aplicación que le muestre al usuario en pantalla una imagen de su computadora. Validar que la imagen tenga un formato válido (jpg, jpeg, png, webp). La imagen debe cambiar cada vez que el usuario suba una imagen diferente

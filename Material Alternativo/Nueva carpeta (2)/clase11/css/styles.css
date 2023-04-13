@@ -1,0 +1,18 @@
+#existe,
+#noExiste {
+  height: 20vh;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: aliceblue;
+  background-color: cadetblue;
+  line-height: 20vh;
+}
+
+#noExiste {
+  background-color: crimson;
+}
+
+.none {
+  display: none;
+}

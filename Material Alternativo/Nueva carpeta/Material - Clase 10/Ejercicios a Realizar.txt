@@ -1,0 +1,3 @@
+- crudObserver
+- DnD Promesas
+- fetch-async

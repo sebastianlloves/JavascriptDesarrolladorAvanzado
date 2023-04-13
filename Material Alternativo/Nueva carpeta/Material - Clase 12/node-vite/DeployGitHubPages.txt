@@ -1,0 +1,18 @@
+Deploy GitHub Pages
+
+1ro - Crear archivo vite.config.js
+    => export default {
+        base: "/node-vite(nombre del repo)/",
+    };
+2do - npm install gh-pages --save-dev
+3ro - Ir a archivo package.json
+    =>  "homepage": "https://<username>.github.io/<repo>/",
+        "scripts": {
+            ...
+            "predeploy": "npm run build",
+            "deploy": "gh-pages -d dist",
+        }
+4to - Subir repo a GitHub
+5to - npm run deploy   
+
+Para que los cambios se vean reflejados, antes de volver a ejecutar npm run deploy hay que hacer un commit al repo

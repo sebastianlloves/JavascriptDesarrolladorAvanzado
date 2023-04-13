@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Avanzado</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/eventos.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Clase 02</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Eventos</h2>
+        <h3>Escucha mediante atributo de Elemento HTML</h3>
+        <!-- Paréntesis le dejan saber al navegador que es una acción. NO EJECUTAN  -->
+        <button onclick="manejarClick()">Hace click</button> <span></span>
+        <br /><br />
+        <h3>Escucha mediante Objeto HTML</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
+          iusto vel ipsum eaque, inventore modi optio facilis repellendus natus
+          odit, alias praesentium laborum. Magni asperiores cum perferendis
+          nisi. Aspernatur, minus.
+        </p>
+        <br /><br />
+        <h3>API Web EventTarget</h3>
+        <button id="btnET">Hace click</button>
+        <br /><br />
+        <h3>Objeto Evento</h3>
+        <p>
+          Contiene toda la información del Evento Desatado. Además, permite
+          manipular acciones pre-establecidas de los elementos
+        </p>
+        <br />
+        <a href="https://www.google.com" target="_blank">Soy un link</a>
+        <span></span> <br /><br />
+        <form>
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" id="nombre" />
+          <br /><br />
+          <input type="submit" value="Enviar" />
+        </form>
+        <br />
+        <br />
+        <h3 class="mt-4">Propagación</h3>
+        <h4 class="mt-4">Capturing</h4>
+        <section class="propagacion capture">
+          <div class="uno">
+            1
+            <div class="dos">
+              2
+              <div class="tres">3</div>
+            </div>
+          </div>
+        </section>
+        <h4 class="mt-4">Bubbling</h4>
+        <section class="propagacion bubble">
+          <div class="uno">
+            1
+            <div class="dos">
+              2
+              <div class="tres">3</div>
+            </div>
+          </div>
+        </section>
+        <h4 class="mt-4">Detener la propagación</h4>
+        <section class="stopPropagation">
+          <div class="uno">
+            1
+            <div class="dos">
+              2
+              <div class="tres">3</div>
+            </div>
+          </div>
+        </section>
+        <br />
+        <h3>Delegación de eventos</h3>
+        <section class="delegacion">
+          <div class="uno">
+            1
+            <div class="dos">
+              2
+              <div class="tres">3</div>
+            </div>
+          </div>
+        </section>
+        <h2>Elemento Dinámico creado en elemDinam.js</h2>
+        <div class="contenedor"></div>
+      </section>
+    </main>
+    <footer>
+      <span>&copy; Copyright</span>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/elemDinam.js"></script>
+  </body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>JavaScript Avanzado</title>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar-->
+      <div class="border-end bg-white" id="sidebar-wrapper">
+        <span class="sidebar-heading border-bottom bg-light"
+          >Contacto:
+          <a href="mailto:anahiforesi.educacionit@gmail.com"
+            >Anahí Foresi</a
+          ></span
+        >
+        <ul class="list-group list-group-flush">
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="index.html"
+            >Persistencia</a
+          >
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="modulos.html"
+            >Módulos</a
+          >
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="ejercicios.html"
+            >Ejercicios</a
+          >
+        </ul>
+      </div>
+      <!-- Page content wrapper-->
+      <div id="page-content-wrapper">
+        <!-- Top navigation-->
+        <nav
+          id="barra"
+          class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
+        >
+          <div class="container-fluid">
+            <button class="btn btn-primary" id="sidebarToggle">Temas</button>
+            <h1>Clase 11</h1>
+          </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container-fluid">
+          <h2 class="mt-4">Organizando el programa</h2>
+          <h3 class="mt-4">Orden de Ejecución</h3>
+          <p>
+            Al trabajar con JavaScript es muy común tener varios archivos para
+            que el código de nuestro programa sea más fácil de leer e
+            interpretar porque en cada archivo sólo ponemos la lógica que
+            corresponde a una funcionalidad en particular. Hacer esto, sin
+            embargo puede traer varias complicaciones relacionadas con la forma
+            en que JavaScript interactúa con el navegador.
+            <br />
+            Empecemos recordando que JavaScript es un Lenguaje de Programación
+            bloqueante interpretado o compilado just-in-time lo implica que
+            cuando el navegador lee un archivo JS no puede hacer otra cosa más
+            que empezar a realizar las tareas declaradas dentro del mismo. Este
+            es el motivo por el cual, si un archivo que contiene código JS que
+            va a interactuar con los elementos escritos en el documento HTML
+            está incorporado dentro de la etiqueta head obtenemos un error.
+            <br />
+            La forma más comúnmente utilizada para evitar este error es hacer la
+            incorporación de nuestros archivos JS en la línea inmediatamente
+            superior al cierre del body.
+            <br />
+            Esta solución, aunque efectiva, acarrea un nuevo problema: el
+            navegador debe leer todo el documento HTML antes de empezar a leer
+            nuestros archivos JS lo que puede afectar la performance de nuestra
+            aplicación.
+            <br />
+            La solución a esos dos problemas es la utilización de los atributos
+            "defer" o "async" en la etiqueta script que usamos para incorporar
+            nuestros archivos JS
+          </p>
+          <h3 class="mt-4">Eventos de Carga</h3>
+          <p>
+            Antes de ver cómo funcionan los atributos "defer" y "async" vamos a
+            hacer un repaso de los 2 eventos de carga de documento:
+            DOMContentLoaded y load:
+          </p>
+          <ul>
+            <li>
+              DOMContentLoaded -> Al trabajar con este evento, lo que buscamos
+              es que la función callback se ejecute cuando se hayan terminado de
+              cargar todos los nodos al DOM Tree. Es decir, cuando ya estén
+              leídas todas las etiquetas HTML. Hay que tener en cuenta que la
+              lectura de las etiquetas HTML es independiente de la carga de
+              recursos externos por lo que existe la posibilidad de que, al
+              momento de ejecución, todavía no podamos acceder a, por ejemplo,
+              las clases declaradas en una hoja de estilos CSS o imágenes de una
+              etiqueta img
+            </li>
+            <li>
+              load -> El trabajo con este evento implica que ejecutaremos la
+              función callback después de la carga del documento HTML y todos
+              sus recursos externos.
+            </li>
+          </ul>
+          <p>
+            Usualmente es posible tratar a estos eventos como intercambiables y
+            utilizarlos de forma indistinta pero, lo ideal es usar
+            DOMContentLoaded cuando no requerimos interactuar con recursos
+            externos y load cuando sí es necesario.
+          </p>
+          <h3 class="mt-4">Atributos defer y async</h3>
+          <p>
+            Los atributos defer y async, similar a lo que sucede con
+            DOMContentLoaded y load, nos permiten controlar cuándo y cómo se va
+            a cargar y ejecutar un archivo JS.
+            <br />
+            La utilización de cualquiera de estos atributos implica permitir que
+            el navegador cargue el documento HTML al mismo tiempo que lee
+            nuestro archivos JS. La diferencia radica en cuándo se va a ejecutar
+            en código
+          </p>
+          <ul>
+            <li>
+              defer -> El atributo indica que el archivo JS debe leerse sin
+              impedir la carga del resto de documento HTML y ejecutarse una vez
+              que se haya terminado esa carga. Una etiqueta script con el
+              atributo defer se ejecutará justo antes de que se dispare el
+              evento DOMContentLoaded. Además, si cargamos varios script el
+              orden de lectura en el documento HTML indica el orden de ejecución
+              de los archivos JS (igual que sucede cuando cargamos varios script
+              sin este atributo)
+            </li>
+            <li>
+              async -> El atributo async indica que el archivo JS debe leerse y
+              ejecutarse de forma independiente a otros archivos JS y la carga
+              del documento HTML. Un script con el atributo async puede
+              ejecutarse después del evento DOMContentLoaded (esto sucede cuando
+              el código JS es más extenso que el documento HTML) o antes (si el
+              archivo JS es muy chico o está guardado en la caché del
+              navegador). En este caso el orden de incorporación es irrelevante
+              porque todos los script que contengan el atributo async se
+              ejecutan cuando terminan de ser leídos.
+            </li>
+          </ul>
+          <p>
+            En la líneas generales se suele aplicar una regla similar a la que
+            aplicamos a los eventos DOMContentLoaded y load para la utilización
+            de estos atributos. Si nuestro script depende de elementos en el DOM
+            usamos defer; de lo contrario utilizamos async (los casos más
+            típicos de esto se dan cuando creamos ventanas emergentes).
+            <br />
+            En definitiva, el trabajo con los atributos defer/async nos permite
+            solucionar el problema del bloqueo que realiza JavaScript al resto
+            de las operaciones que implican la carga de una página web para
+            mejorar la performance de nuestra aplicación.
+            <br />
+            Ahora bien, cuando trabajamos con varios archivos JS se presenta un
+            segundo problema y es que en JavaScript todos los elementos creados
+            en nuestros archivos (constantes, funciones, etc) se almacenan en el
+            Objeto Global y, por tanto, son accesibles desde todos los script
+            incorporados al mismo documento HTML. La solución a esto es la
+            creación de Módulos.
+          </p>
+          <h3 class="mt-4">Módulos</h3>
+          <p>
+            Vamos a empezar definiendo a los módulos como un archivo que
+            contiene una porción de código que se utilizará para que nuestra
+            aplicación funcione (una parte pequeña del sistema). Con esto
+            queremos decir que cada archivo JS incorporado a nuestro proyecto
+            incorporado a nuestro documento HTML es, en escencia, un módulo.
+            <br />
+            Los módulos tienen como característica principal que los elementos
+            creados dentro sólo sean accesibles desde el propio módulo y
+            permiten elegir qué y cómo compartir (similar a las funciones).
+            <br />
+            Dada las características de JavaScript como lenguaje, entonces, no
+            alcanza simplemente con hacer un archivo para tener un módulo porque
+            todo lo que creamos dentro será visible desde otros archivos. Sin
+            embargo es posible simularlo recurriendo a las Funciones Anónimas
+            Auto-invocadas
+          </p>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-lg-2">
+              <div class="col mb-3">
+                <img
+                  src="assets/modulo.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 650px"
+                />
+              </div>
+            </div>
+          </div>
+          <p>
+            De esta forma es posible trabajar en distintos archivos y exponer
+            sólo aquellos datos que sean necesarios compartir, pero esto
+            acarreaba un problema y es que todos los archivos debían estar
+            incorporados a los distintas páginas HTML que los requerían
+            generando una sobrecarga de peticiones a los servidores y
+            ralentizando el flujo de ejecución.
+            <br />
+            A partir de ECMAScript 6, se introducen los conceptos de módulos de
+            exportación (export) e importación (import).
+            <br />
+            Al trabajar con módulos, a diferencia de lo que sucedía antes, ya no
+            es necesario incorporar todos los script al documento HTML. Alcanza
+            con incorporar el archivo que va a hacer los import (usar los datos)
+            de los módulos que realizan export de sus datos (hacen disponibles
+            sus datos).
+            <br />
+            Para crear el módulo es necesario agregar el atributo type="module"
+            a nuestro script. Esto envía la carga hasta el final de la
+            transferencia.
+            <br />
+            El trabajo con módulos evita la sobrecarga de peticiones y mejora el
+            flujo de ejecución.
+          </p>
+          <div class="container">
+            <div class="row row-cols-1">
+              <div class="col mb-3">
+                <img
+                  src="assets/moduloES6.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 650px"
+                />
+              </div>
+              <div class="col mb-3">
+                <img
+                  src="assets/moduloES6-1.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 650px"
+                />
+              </div>
+            </div>
+          </div>
+          <p>
+            Un módulo que exporta es un archivo JS (no debe ser agregado al
+            documento HTML) que utiliza la palabra export para indicar cuál es
+            el/los elementos que contiene quiere hacer disponibles para ser
+            importado mediante el uso de la palabra import.
+            <br />
+            Existen dos formas de exportar un elemento
+          </p>
+          <ul>
+            <li>
+              export -> La palabra export fuerza a hacer el import respetando el
+              nombre de la variable/función. Puede haber varios export en un
+              mismo archivo
+            </li>
+            <li>
+              export default -> Si agregamos la palabra default el import puede
+              cambiar el nombre de la variable/función. Sólo puede haber un
+              export default por archivo. Es posible combinar export y export
+              default en un mismo archivo
+            </li>
+          </ul>
+          <div class="container">
+            <div class="row row-cols-1">
+              <div class="col mb-3">
+                <img
+                  src="assets/moduloES6-2.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 650px"
+                />
+              </div>
+              <div class="col mb-3">
+                <img
+                  src="assets/moduloES6-3.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 650px"
+                />
+              </div>
+            </div>
+          </div>
+          <footer class="text-end">
+            <small
+              >Información Adicional
+              <a href="https://es.javascript.info/modules-intro"
+                >Módulos</a
+              ></small
+            >
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

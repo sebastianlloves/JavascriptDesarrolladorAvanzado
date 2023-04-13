@@ -1,0 +1,29 @@
+div {
+  margin: 0em;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#src_move {
+  color: blue;
+  margin-bottom: 20px;
+  width: 150px;
+  height: 50px;
+}
+
+#dest_move {
+  border: 5px solid blue;
+  width: 300px;
+  height: 50vh;
+}
+
+.solid {
+  border: 5px solid black;
+}
+
+.dashed {
+  border: 5px dashed black;
+}

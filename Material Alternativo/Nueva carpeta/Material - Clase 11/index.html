@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>JavaScript Avanzado</title>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar-->
+      <div class="border-end bg-white" id="sidebar-wrapper">
+        <span class="sidebar-heading border-bottom bg-light"
+          >Contacto:
+          <a href="mailto:anahiforesi.educacionit@gmail.com"
+            >Anahí Foresi</a
+          ></span
+        >
+        <ul class="list-group list-group-flush">
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="index.html"
+            >Persistencia</a
+          >
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="modulos.html"
+            >Módulos</a
+          >
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="ejercicios.html"
+            >Ejercicios</a
+          >
+        </ul>
+      </div>
+      <!-- Page content wrapper-->
+      <div id="page-content-wrapper">
+        <!-- Top navigation-->
+        <nav
+          id="barra"
+          class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
+        >
+          <div class="container-fluid">
+            <button class="btn btn-primary" id="sidebarToggle">Temas</button>
+            <h1>Clase 11</h1>
+          </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container-fluid">
+          <h2 class="mt-4">Persistencia de Datos</h2>
+          <p>
+            HTTP/HTTPS es un protocolo "Stateless" (sin estado) lo que significa
+            que no requiere la retención de información o estados de los
+            usuarios en cada transferencia. <br />
+            Hablar de <b>Persistencia de Datos</b> significa, entonces, generar
+            el almacenamiento de la información o estados de cada usuarios de
+            manera tal que una nueva transferencia no signifique volver al
+            estado inicial. En JavaScript existen varios métodos de persistencia
+            y entre ellos se encuentra la API Web Storage.
+          </p>
+          <h3 class="mt-4">API Web Storage</h3>
+          <p>
+            La API Web Storage nos permite trabajar con un tipo de
+            almacenamiento que, dependiendo del navegador, oscila entre los 5 y
+            10mb. <br />
+            Con Storage podemos distinguir dos tipos de almacenamientos uno
+            global y persistente (localStorage) y otro local y temporal
+            (sessionStorage). <br />
+            Agregar, modificar o eliminar información dentro de los dos
+            almacenamientos distintos de Storage se hace de la misma forma, lo
+            único que tenemos que tener en cuenta es que localStorage va
+            almacenar la información incluso aunque se cierre el navegador y esa
+            información puede ser accesible desde otras pestañas; mientras que
+            sessionStorage va a borrar la información en el momento en que se
+            cierra la pestaña y sólo puede ser accedida desde la misma (hay una
+            excepción cuando se trabaja con elementos iframe). <br />
+            Dentro de Storage los datos quedan almacenados en un objeto cuyas
+            claves y valores deben ser strings
+          </p>
+          <h4 class="mt-4">Características</h4>
+          <ul>
+            <li>5 a 10mb de almacenamiento</li>
+            <li>localStorage y sessionStorage se manejan de la misma forma</li>
+            <li>Almacenamiento de datos en Objetos JSON</li>
+          </ul>
+          <h4 class="mt-4">localStorage vs sessionStorage</h4>
+          <h5 class="mt-4">localStorage</h5>
+          <ul>
+            <li>
+              Almacena la información incluso aunque se cierre el navegador
+            </li>
+            <li>La información es accesible desde otras pestañas</li>
+          </ul>
+          <h5 class="mt-4">sessionStorage</h5>
+          <ul>
+            <li>Almacena la información hasta se cierre la pestaña</li>
+            <li>La información no es accesible desde otras pestañas</li>
+          </ul>
+          <div class="container">
+            <div class="row row-cols-1">
+              <div class="col mb-3">
+                <img
+                  src="assets/crearStorage.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 700px"
+                />
+              </div>
+              <div class="col mb-3">
+                <img
+                  src="assets/leerStorage.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 600px"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="assets/borrarStorage.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 400px"
+                />
+              </div>
+            </div>
+          </div>
+          <p>
+            Hay que tener en cuenta que para iterar las distintas claves
+            almacenadas en local/sessionStorage debemos filtrar las claves
+            correspondientes a la clase Storage. Para eso tenemos dos opciones:
+          </p>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-lg-2">
+              <div class="col mb-3">
+                <img
+                  src="assets/iterar1.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 700px"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="assets/iterar2.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 700px"
+                />
+              </div>
+            </div>
+          </div>
+          <h4 class="mt-4">Evento Storage</h4>
+          <p>
+            Cuando los datos se actualizan en local/sessionStorage, se dispara
+            el evento storage. Hay que tener en cuenta que este evento se
+            dispara en todos los objetos window donde el almacenaje es accesible
+            excepto en el que lo ha causado. <br />
+            Con el evento storage podemos obtener la siguiente información:
+          </p>
+          <ul>
+            <li>key - Clave modificada (null si se uso .clear())</li>
+            <li>oldValue - Valor anterior (null si se añade nueva)</li>
+            <li>newValue - Valor nuevo (null si se borra una clave)</li>
+            <li>url - Url del documento que desató el evento</li>
+            <li>
+              storageArea - localStorage/sessionStorage dependiendo de dónde se
+              desata el evento
+            </li>
+          </ul>
+          <footer class="text-end">
+            <small
+              >Información Adicional
+              <a href="https://es.javascript.info/data-storage"
+                >Persistencia</a
+              ></small
+            >
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

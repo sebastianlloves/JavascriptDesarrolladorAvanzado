@@ -1,0 +1,23 @@
+.azul {
+  color: blue;
+}
+
+.subrayado {
+  text-decoration: underline;
+}
+
+.app {
+  border: 1px solid black;
+  width: 90vw;
+  height: 30vh;
+  margin: 20px auto;
+}
+
+.parrafo {
+  color: aliceblue;
+  background-color: cadetblue;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 10px;
+}

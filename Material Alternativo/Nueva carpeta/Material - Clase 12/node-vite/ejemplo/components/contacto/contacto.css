@@ -1,0 +1,41 @@
+form {
+  padding: 1rem;
+}
+
+textarea {
+  resize: none;
+}
+
+.comentario {
+  width: 90%;
+  padding-left: 1rem;
+  height: 80px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgba(240, 248, 255, 0.6);
+  color: rgb(2, 2, 2);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.comentarios {
+  margin-top: 0.5rem;
+  width: 75%;
+  height: 95px;
+  max-width: 550px;
+  overflow: scroll;
+}
+
+.user,
+.texto {
+  padding: 0;
+  margin: 0;
+}
+
+.user {
+  width: 25%;
+  max-width: 150px;
+  margin-bottom: 5px;
+}

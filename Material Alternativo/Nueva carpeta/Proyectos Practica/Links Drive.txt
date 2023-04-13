@@ -1,0 +1,39 @@
+https://drive.google.com/drive/folders/1G7AhNpH_moDMx9j8rFZA1jgg8nyqBftY?usp=sharing - Clase 02 - Inicio
+https://drive.google.com/drive/folders/1a0DccWTWtaLAeMLUB2Vzu40Q4x5PJQXV?usp=sharing - Clase 03 - Inicio
+https://drive.google.com/drive/folders/1cJ_UXHnx391S8B_wyKde4LIrDG1-x1aA?usp=sharing - Formulario Clase 03
+https://drive.google.com/drive/folders/14Tu5Wol5OSDqezv6N0RHU-IOwMfp9lf8?usp=sharing - Clase 06 - Inicio
+https://drive.google.com/drive/folders/10fua1Wffxlrqzb_8tClyzW1wivYLd3Ax?usp=sharing - Crud HTML-CSS
+https://drive.google.com/drive/folders/1-asUmK4HDzY93qVIQnJ-hmoqhMa74KCM?usp=sharing - Crud Final
+https://drive.google.com/drive/folders/1O3epleq9L0hBi5PFU763_KqLyX486JZN?usp=sharing - Crud Observer HTML-CSS
+https://drive.google.com/drive/folders/1Mxj-ixvODJZymYWfAx9eEGpqtuhq2BhQ?usp=sharing - Crud Observer Final
+https://drive.google.com/drive/folders/12D8fgHBTfHU2o_muecl6XPYiBDVV8792?usp=sharing - DnD HTML-CSS
+https://drive.google.com/drive/folders/11rRlYP-twe5OQgSijsDBlVqKk23THFFr?usp=sharing - DnD Final
+https://drive.google.com/drive/folders/12e6-vaEhYNUNwCHK5r-hGNHdYTEiqvIb?usp=sharing - Fetch-Async HTML-CSS
+https://drive.google.com/drive/folders/12e6-vaEhYNUNwCHK5r-hGNHdYTEiqvIb?usp=sharing - Fetch-Async Final
+https://drive.google.com/drive/folders/1fKdM7U0BG3bCeLXqez_ZNdINB6tiC0dG?usp=sharing - DnDPromesas HTML-CSS
+https://drive.google.com/drive/folders/1f40PBeGFjcekkRPzedP0_9z4NKxrlR7O?usp=sharing - DnDPromesas Final
+https://drive.google.com/drive/folders/1luOTNaLGtvHLWVeQqmT3u1b3TEc8Ri3G?usp=sharing - Objetos HTML-CSS
+https://drive.google.com/drive/folders/1lsXn8w9fU0FEH1k9EysWTfsDxS9eBwYN?usp=sharing - Objetos Final
+https://drive.google.com/drive/folders/1DLPIBiixEye_utVEWIlv8fkX--c-7ZvN?usp=sharing - Modulos HTML-CSS
+https://drive.google.com/drive/folders/1DIZJeDO-B-0LX41Bl1N3HZQxBJYBwpHo?usp=sharing - Modulos Final
+https://drive.google.com/drive/folders/1IY4XpOtlC_h8d4_L8G6R0xACa2eFTzmc?usp=sharing - Web-storage HTML-CSS
+https://drive.google.com/drive/folders/1HSh0w2P69KjcOuCzyv4PIzK3YslwUbTd?usp=sharing - Web-storage Final
+https://drive.google.com/drive/folders/1IoJSYwUbWCVRc--_9q5eZxUPA4HKrMaV?usp=sharing - Persistencia HTML-CSS
+https://drive.google.com/drive/folders/1JXECNDBBy6gWwmMJGSMmni3rl9snPsZT?usp=sharing - Persistencia Final
+https://drive.google.com/drive/folders/1OgrgaIqu9MZyAQlLJxKDZu3ZgXI8iTMY?usp=sharing - Modulos Node Final
+https://drive.google.com/drive/folders/1aEwcj-4j30jUl2lavqlinPLDu5uHBv7H?usp=sharing - Modulos Vite HTML-CSS
+https://drive.google.com/drive/folders/1_GwtnaXLzsWLE5EGKCPNqa_j-sWE0C8M?usp=sharing - Modulos Vite Final
+
+
+
+//Ejercicios Cortos Eventos
+https://drive.google.com/drive/folders/1I7-A_1eypOBae4F4gzv6yNx34LXkQJwz?usp=sharing - Busqueda HTML-CSS
+https://drive.google.com/drive/folders/1HQAYkkTD47zRTjIfbQ7nC7Osjuyk7kub?usp=sharing - Busqueda Final
+https://drive.google.com/drive/folders/1IMb7FH8p0CotWv-KGeWyAwR5fqqTgo8y?usp=sharing - Contador HTML-CSS
+https://drive.google.com/drive/folders/1HuuH8rbJq0Vp0pt1MhSW5QXkjaPQQyYs?usp=sharing - Contador Final
+https://drive.google.com/drive/folders/1IXtFhNNQ6myXRCcmGxGhtWaLBTCE3oRY?usp=sharing - Hexadecimal HTML-CSS
+https://drive.google.com/drive/folders/1HMYHzMUvna7dAqTFd5XzYPRu-D9ty63n?usp=sharing - Hexadecimal Final
+https://drive.google.com/drive/folders/1Q8X_-BigE2N7OxgQHzAcEsNS5EwgvO3e?usp=sharing - GaleriaArray HTML-CSS
+https://drive.google.com/drive/folders/1UmLeyckl6mazjGl10VMrBvTtTwc-mETO?usp=sharing - GaleriaArray Final
+https://drive.google.com/drive/folders/1g-vjEnHbV64V82UNRebbdPNbJeDKcnAR?usp=sharing - Video Final
+https://drive.google.com/drive/folders/1fnSOe5G7xBht4MWVvLtBGjhCSkcajBWA?usp=sharing - Video HTML-CSS

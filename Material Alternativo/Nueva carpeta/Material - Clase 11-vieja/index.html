@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>JavaScript Avanzado</title>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar-->
+      <div class="border-end bg-white" id="sidebar-wrapper">
+        <span class="sidebar-heading border-bottom bg-light"
+          >Contacto:
+          <a href="mailto:anahiforesi.educacionit@gmail.com"
+            >Anahí Foresi</a
+          ></span
+        >
+        <ul class="list-group list-group-flush">
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="index.html"
+            >Persistencia y Performance</a
+          >
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="ejercicios.html"
+            >Ejercicios</a
+          >
+        </ul>
+      </div>
+      <!-- Page content wrapper-->
+      <div id="page-content-wrapper">
+        <!-- Top navigation-->
+        <nav
+          id="barra"
+          class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
+        >
+          <div class="container-fluid">
+            <button class="btn btn-primary" id="sidebarToggle">Temas</button>
+            <h1>Clase 11</h1>
+          </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container-fluid">
+          <h2 class="mt-4">Persistencia de Datos</h2>
+          <p>
+            HTTP/HTTPS es un protocolo "Stateles" (sin estado) lo que significa
+            que no requiere la retención de información o estados de los
+            usuarios en cada transferencia. <br />
+            Hablar de <b>Persistencia de Datos</b> significa, entonces, generar
+            el almacenamiento de la información o estados de cada usuarios de
+            manera tal que una nueva transferencia no signifique volver al
+            estado inicial. En JavaScript existen varios métodos de persistencia
+            y entre ellos se encuentran las Cookies y la API Web Storage.
+          </p>
+          <h3 class="mt-4">Cookies</h3>
+          <p>
+            Son pequeños archivos de texto que las webs guardan en tu navegador
+            con información sobre tus hábitos de navegación y que sirven para
+            facilitarte la navegación en ese sitio, siendo en algunos casos
+            indispensables que dicha web funcione. Por ejemplo, si navegas por
+            una web que tiene varios idiomas y eliges leerla en español, se
+            instalará una cookie que hará que mientras estés en esa web, las
+            páginas se abran en español y no en inglés. Otro cuando compras
+            online, todo lo que añades a la cesta es información que se guarda
+            en una cookie.
+          </p>
+          <h4 class="mt-4">¿Cómo se componen?</h4>
+          <ul>
+            <li>Un name-value que contiene la información a almacenar</li>
+            <li>
+              Una fecha de expiración que define cuando será borrada la coockie
+            </li>
+            <li>El dominio y ruta del servidor al cual se debe enviar</li>
+          </ul>
+          <p>
+            Todas las coockies son agregadas a los Headers de las peticiones
+            HTTP para que los servidores las lean y decidan si tenemos acceso o
+            no a ver la página solicitada y, en caso de tenerlo, recordar la
+            forma en que deseamos esa visualización.
+          </p>
+          <h4 class="mt-4">Consideraciones legales</h4>
+          <p>
+            Desde el año 2012, si tu sitio web utiliza cookies es obligatorio
+            colocar un aviso. No hacerlo nos deja expuestos a sanciones.
+          </p>
+          <h5 class="mt-4">¿Qué información debe contener el aviso?</h5>
+          <ul>
+            <li>
+              <b>Qué son las cookies.</b> Breve explicación sobre la misión que
+              cumplen las cookies en un sitio web.
+            </li>
+            <li>
+              <b>Para que se utilizan.</b> Explicación clara y detallada sobre
+              la finalidad para las que utilizamos las cookies en nuestro sitio
+              web
+            </li>
+            <li>
+              <b>Quién las instala.</b> Además de para que se utilizan debemos
+              indicar quién es el que instala las cookies en el equipo del
+              usuario
+            </li>
+            <li>
+              <b>Cómo se rechazan.</b> Debemos realizar una pequeña explicación
+              de cómo se pueden rechazar las cookies de nuestro sitio web sea
+              cual sea el navegador que utilice el usuario
+            </li>
+          </ul>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-lg-2">
+              <div class="col mb-3">
+                <img
+                  src="assets/crearCookie.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 700px"
+                />
+              </div>
+              <div class="col mb-3">
+                <img
+                  src="assets/leerCookie.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 700px"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="assets/borrarCookie.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 700px"
+                />
+              </div>
+            </div>
+          </div>
+          <h3 class="mt-4">API Web Storage</h3>
+          <p>
+            La API Web Storage nos permite trabajar con un tipo de
+            almacenamiento que, dependiendo del navegador, oscila entre los 5 y
+            10mb. <br />
+            Con Storage podemos distinguir dos tipos de almacenamientos uno
+            global y persistente (localStorage) y otro local y temporal
+            (sessionStorage). <br />
+            Agregar, modificar o eliminar información dentro de los dos
+            almacenamientos distintos de Storage se hace de la misma forma, lo
+            único que tenemos que tener en cuenta es que localStorage va
+            almacenar la información incluso aunque se cierre el navegador y esa
+            información puede ser accesible desdes otras pestañas; mientras que
+            sessionStorage va a borrar la información en el momento en que se
+            cierra la pestaña y sólo puede ser accedida desde la misma (hay una
+            excepción cuando se trabaja con iframes). <br />
+            Dentro de Storage los datos quedan almacenados en un objeto cuyas
+            claves y valores deben ser strings
+          </p>
+          <h4 class="mt-4">Caracteristicas</h4>
+          <ul>
+            <li>5 a 10mb de almacenamiento</li>
+            <li>localStorage y sessionStorage se manejan de la misma forma</li>
+            <li>Almacenamiento de datos en Objetos JSON</li>
+          </ul>
+          <h4 class="mt-4">localStorage vs sessionStorage</h4>
+          <h5 class="mt-4">localStorage</h5>
+          <ul>
+            <li>
+              Almacena la información incluso aunque se cierre el navegador
+            </li>
+            <li>La información es accesible desde otras pestañas</li>
+          </ul>
+          <h5 class="mt-4">sessionStorage</h5>
+          <ul>
+            <li>Almacena la información hasta se cierre la pestaña</li>
+            <li>La información no es accesible desde otras pestañas</li>
+          </ul>
+          <div class="container">
+            <div class="row row-cols-1">
+              <div class="col mb-3">
+                <img
+                  src="assets/crearStorage.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 700px"
+                />
+              </div>
+              <div class="col mb-3">
+                <img
+                  src="assets/leerStorage.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 600px"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="assets/borrarStorage.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 400px"
+                />
+              </div>
+            </div>
+          </div>
+          <p>
+            Hay que tener en cuenta que para iterear las distintas claves
+            almacenadas en local/sessionStorage debemos filtrar las claves
+            correspondientes a la clase Storage. Para eso tenemos dos opciones:
+          </p>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-lg-2">
+              <div class="col mb-3">
+                <img
+                  src="assets/iterar1.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 700px"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="assets/iterar2.PNG"
+                  alt=""
+                  width="100%"
+                  style="max-width: 700px"
+                />
+              </div>
+            </div>
+          </div>
+          <h4 class="mt-4">Evento Storage</h4>
+          <p>
+            Cuando los datos se actualizan en local/sessionStorage, se dispara
+            el evento storage. Hay que tener en cuenta que este evento se
+            dispara en todos los objetos window donde el almacenaje es accesible
+            excepto en el que lo ha causado. <br />
+            Con el evento storage podemos obtener la siguiente información:
+          </p>
+          <ul>
+            <li>key - Clave modificada (null si se uso .clear())</li>
+            <li>oldValue - Valor anterior (null si se añade nueva)</li>
+            <li>newValue - Valor nuevo (null si se borra una clave)</li>
+            <li>url - Url del documento que desató el evento</li>
+            <li>
+              storageArea - localStorage/sessionStorage dependiendo de dónde se
+              desata el evento
+            </li>
+          </ul>
+          <h2 class="mt-4">Performance</h2>
+          <p>
+            Dado la constante interacción con el DOM, API's REST y eventos,
+            JavaScript es un lenguaje que puede ver afectada su performance
+            rápidamente. <br />
+            La API Web Performance y la pestaña Performance son herramientas que
+            nos pueden ayudar a entender qué elementos están demorando más en
+            ejecutarse y, de esa forma, permitirnos trabajar en consecuencia.
+            <br />
+            A continuación vamos a dejar una lista de algunos elementos a tener
+            en cuenta para que nuestro código se mantenga tan performante como
+            sea posible:
+          </p>
+          <ul>
+            <li>
+              Definir variables locales - En el momento en que llama a una
+              función, el navegador realiza una actividad que se denomina
+              búsqueda de alcance. Con el aumento del número de ámbitos en la
+              cadena de ámbitos, también aumenta la cantidad de tiempo necesario
+              para acceder a las variables que están fuera del ámbito actual.
+              <br />
+              Esa es la razón por la que un motor tarda más en acceder a una
+              variable global en comparación con una variable local. Esto
+              significa que si se definen la mayoría de las variables
+              localmente, habrá una rápida disminución en el tiempo requerido
+              por el motor para buscarlas. Por lo tanto, aumentará la velocidad
+              general de la aplicación.
+            </li>
+            <li>
+              Mantener los códigos ligeros y pequeños - Mantener los códigos
+              ligeros y pequeños reduciría la latencia y aumentaría la
+              velocidad. <br />
+              Otro método para optimizar el rendimiento de la aplicación es
+              reducir y disminuir varios archivos JS en uno solo optimizado
+              (mificiado).
+              <ul>
+                <li>
+                  <a href="https://codebeautify.org/minify-html"
+                    >Minificar HTML</a
+                  >
+                </li>
+                <li>
+                  <a href="https://codebeautify.org/css-beautify-minify"
+                    >Minificar CSS</a
+                  >
+                </li>
+                <li>
+                  <a href="https://codebeautify.org/minify-js">Minificar JS</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Delegación de eventos - La delegación de eventos facilita el uso
+              de un solo controlador de eventos que finalmente ayuda a
+              administrar de manera eficiente un tipo de evento para toda la
+              página
+            </li>
+            <li>
+              Evitar bucles no deseados - La creación de bucles en JavaScript no
+              se considera algo bueno, ya que ejerce una presión adicional sobre
+              el navegador. Es importante tener en cuenta que haces menos
+              trabajo en el bucle. Cuanto menos trabajo haga en el bucle, más
+              rápido lo hará. Además, hay algunos trucos simples, uno de los
+              cuales es almacenar la longitud de una matriz en una variable
+              diferente en lugar de leer la longitud en cada iteración del
+              ciclo. Esto podría ser de gran ayuda para optimizar su código y
+              ejecutar las cosas de una manera más eficiente.
+            </li>
+            <li>
+              Minimizar el acceso al DOM - Almacenar las referencias a los
+              objetos del navegador o crear fragmentos para insertar código en
+              una sóla interacción.
+            </li>
+          </ul>
+          <footer class="text-end">
+            <small
+              >Informacion Adicional
+              <a href="https://es.javascript.info/data-storage"
+                >Persistencia</a
+              ></small
+            >
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

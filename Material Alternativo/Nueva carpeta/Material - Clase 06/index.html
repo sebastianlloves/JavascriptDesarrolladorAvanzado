@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>JavaScript Avanzado</title>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar-->
+      <div class="border-end bg-white" id="sidebar-wrapper">
+        <span class="sidebar-heading border-bottom bg-light"
+          >Contacto:
+          <a href="mailto:anahiforesi.educacionit@gmail.com"
+            >Anahí Foresi</a
+          ></span
+        >
+        <ul class="list-group list-group-flush">
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="index.html"
+            >Archivos - AJAX</a
+          >
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="ejercicios.html"
+            >Ejercicios</a
+          >
+        </ul>
+      </div>
+      <!-- Page content wrapper-->
+      <div id="page-content-wrapper">
+        <!-- Top navigation-->
+        <nav
+          id="barra"
+          class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
+        >
+          <div class="container-fluid">
+            <button class="btn btn-primary" id="sidebarToggle">Temas</button>
+            <h1>Clase 06</h1>
+          </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container-fluid">
+          <h2 class="mt-4">Archivos Binarios (Blob - File)</h2>
+          <p>
+            Las llamadas AJAX sólo pueden interpretar datos de tipo texto, esto
+            no significa que la tranferencia de datos este limitada a esos.
+            <br />
+            Para poder interpretar archivos que no sean de texto (HMTL, XML,
+            JSON), necesitamos un 'traductor'. Para ello contamos con las
+            <b>API's Web Blob y File</b>. <br />
+            Blob interpreta los archivos binarios y nos permite conocer su
+            tamaño y su tipo. <br />
+            File, por su parte, es un objeto que hereda de Blob por lo que tiene
+            todos los elemento correspondientes a este y agrega otras
+            funcionalidades. <br />
+            En conjunto con estas API también nos encontramos con
+            <b>FileList</b> cuya función es crear un array de los archivos
+            subidos mediante los input del tipo 'file'. <br />
+            La manipulación de los archivos binarios mediante el uso de
+            Blob/File nos permitiría, entre otras cosas, generar una interacción
+            con los servidores para guardar los archivos subidos. Por su puesto,
+            esto implica trabajar con un motor capaz de interactuar con los
+            servidores como puede ser Node.js. <br />
+            Ahora bien, si lo que nos interesa es mostrar esos archivos en
+            nuestro HTML entonces necesitamos crear un acceso a los mismos. Al
+            subir un archivo mediante un input, ese archivo recibe una URL
+            temporal que nosotros no podemos manipular pero que podemos
+            convertir para ser leía por navegador y, de esa forma, imprimir en
+            en DOM el archivo. Para esto, necesitamos trabajar con la
+            <b>API URL</b>
+          </p>
+          <h3 class="mt-4">Leer archivos desde input:file</h3>
+          <div
+            class="w-75 m-auto border border-dark rounded-3 d-flex flex-column align-items-center justify-content-evenly"
+            style="height: 70vh"
+          >
+            <form
+              id="ejemploBlob"
+              class="border border-dark rounded-3 m-auto w-75 d-flex flex-column mt-4"
+            >
+              <label for="subir archivo" class="p-2"
+                >Subir Archivo: <br />
+                <input
+                  type="file"
+                  name="archivo"
+                  id="archivo"
+                  class="p-2 w-75"
+                />
+              </label>
+              <button
+                type="submit"
+                class="btn btn-info w-25 m-2 align-self-end"
+              >
+                Enviar
+              </button>
+            </form>
+
+            <img class="imagen w-50 mt-4 mb-4 d-none" />
+
+            <!-- Corresponde al standard HTML5 y permite renderizar contenido binario -->
+            <embed
+              type="application/pdf"
+              class="mb-4 d-none"
+              style="height: 55%; width: 90%"
+            />
+          </div>
+          <h3 class="mt-4">Leer archivos binarios AJAX</h3>
+          <div
+            class="w-75 p-2 m-auto border border-dark rounded-3 d-flex flex-column align-items-center justify-content-center"
+            style="height: 70vh"
+          >
+            <img class="imagen w-25 mb-4 d-none" />
+
+            <embed
+              type="application/pdf"
+              class="mb-4 d-none"
+              style="height: 55%; width: 90%"
+            />
+          </div>
+          <h3 class="mt-4">Barra de progreso AJAX</h3>
+          <div
+            class="w-75 m-auto border border-dark rounded-3 d-flex flex-column align-items-center justify-content-center"
+            style="height: 70vh"
+          >
+            <progress value="" max="100"></progress>
+            <p class="progreso">Descarga al 0%</p>
+
+            <img class="imagen w-25 mb-4 d-none"  />
+          </div>
+          <h2 class="mt-4">Drag And Drop</h2>
+          <p>
+            Las interfaces Drag-and-Drop posibilitan arrastrar y soltar archivos
+            en una página web. <br />
+            Los pasos principales para configurar Drag-and-drop son:
+          </p>
+          <ol>
+            <li>
+              Definir una "zona drop (drop zone), es decir, definir un elemento
+              donde se podrá soltar el archivo
+            </li>
+            <li>
+              Definir funciones para la gestión de los eventos drop y dragover
+            </li>
+          </ol>
+          <h3 class="mt-4">Formulario con Drag&Drop</h3>
+          <input
+            type="file"
+            name="archivoDrop"
+            id="archivoDrop"
+            class="d-none"
+          />
+          <div
+            class="dragDrop m-auto border border-dark rounded-3 d-flex flex-column align-items-center justify-content-center"
+            style="width: 400px; height: 70vh"
+          >
+            <label for="archivoDrop"
+              >Arrastre y suelte el archivo o haga click</label
+            >
+            <img id="visualizadorImg" class="imagen w-25 mb-4 d-none" />
+          </div>
+          <h3 class="mt-4">Progress Upload</h3>
+          <input
+            type="file"
+            name="archivoDrop1"
+            id="archivoDrop1"
+            class="d-none"
+          />
+          <div
+            class="dragDrop m-auto border border-dark rounded-3 d-flex flex-column align-items-center justify-content-center"
+            style="width: 400px; height: 70vh"
+          >
+            <label for="archivoDrop1"
+              >Arrastre y suelte el archivo o haga click</label
+            >
+          </div>
+          <footer class="text-end">
+            <small>
+              Información adicional sobre
+              <a href="https://es.javascript.info/binary">Archivos y Blob</a> |
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop"
+                >Drag&Drop1</a
+              ></small> |
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/API/HTML_Drag_and_Drop_API"
+                >Drag&Drop2</a
+              ></small
+            >
+          </footer>
+          <h2 class="mt-4">API Web FormData</h2>
+          <p>
+            El objeto FormData le permite compilar un conjunto de pares clave / valor para enviar usando XMLHttpRequest . Está diseñado principalmente para su uso en el envío de datos de formularios, pero se puede usar independientemente de los formularios para transmitir datos con clave. 
+            <br>
+            Si se le brinda un elemento HTML form, el objeto automáticamente capturará sus campos. Lo que hace especial al objeto FormData es que los métodos de red, tales como fetch, pueden aceptar un objeto FormData como el cuerpo. Es codificado y enviado como Content-Type: multipart/form-data. Desde el punto de vista del servidor, se ve como una entrega normal.
+          </p>
+          <h3 class="mt-4">Métodos del Objeto FormData</h3>
+          <ul>
+            <li>.append(name, value) | .append(name, blob, filename) => Agrega un campo de formulario | Agrega un campo de input:file. Perite repetición de name en los input</li>
+            <li>.set(name, value) | .set(name, blob, filename) => Agrega un campo de formulario | Agrega un campo de input:file. NO perite repetición de name en los input. Elimina cualquier input cuyo name coincida con el que estamos ingresando</li>
+            <li>.delete(name) => Elimina el input</li>
+            <li>.get(name) => Obtiene el value del input con el name correspondiente</li>
+            <li>.has(name) => Booleano que checkea la existencia del input con el name correspondiente</li>
+          </ul>
+          <footer class="text-end">
+            <small>
+              Información adicional sobre
+              <a href="https://es.javascript.info/formdata"
+                >FormData</a
+              ></small
+            >
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!-- XHR -->
+    <script src="js/index.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+Ejercicios resueltos en archivo ejercicios.js
+
+/*
+  Crear funciones que usen los valores de un array para retornar los valores modificados.
+    => Las funciones NO DEBEN recibir el array como argumento
+    => Debe ser posible utilizarlas para leer un array almacenado dentro de un objeto
+    => Deben recibir una función callback para indicar cómo se deben modificar los valores originales
+    => Acciones a ejecutarse
+      => Alterar los valores almacenados
+      => Filtrar el valor especificado
+      => Encontrar el valor especificado. Debe retornar el valor encontrado no un array (puede no recibir una función callback)
+    => Los valores devueltos deben quedar almacenados en el objeto que contiene el array original. 
+    => Mostrar los resultados en pantalla  
+*/
+
+
+
+/*
+  Crear un Prototipo Usuario con las propiedades id, user, pass y mail y el método setUser que maneje el cambio de las propiedades. 
+  El valor de la propiedad id no puede repetirse.
+    => Crear algunos objetos Usuario y almacenarlos en un array. 
+    => Crear una tabla dinámica para mostrar los distintos usuarios. Agregar un botón que permita modificar las propiedades de cada usuario en particular. No se debe permitir la modificación de la propiedad id.
+*/

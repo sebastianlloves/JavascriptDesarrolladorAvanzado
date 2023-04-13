@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>JavaScript Avanzado</title>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar-->
+      <div class="border-end bg-white" id="sidebar-wrapper">
+        <span class="sidebar-heading border-bottom bg-light"
+          >Contacto:
+          <a href="mailto:anahiforesi.educacionit@gmail.com"
+            >Anahí Foresi</a
+          ></span
+        >
+        <ul class="list-group list-group-flush">
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="index.html"
+            >POO</a
+          >
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="seguridad.html"
+            >Seguridad y Errores</a
+          >
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="ejercicios.html"
+            >Ejercicios</a
+          >
+        </ul>
+      </div>
+      <!-- Page content wrapper-->
+      <div id="page-content-wrapper">
+        <!-- Top navigation-->
+        <nav
+          id="barra"
+          class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
+        >
+          <div class="container-fluid">
+            <button class="btn btn-primary" id="sidebarToggle">Temas</button>
+            <h1>Clase 09</h1>
+          </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container-fluid">
+          <h2 class="mt-4">Programación Orientada a Objetos</h2>
+          <p>
+            A partir de ECMAScript 6, JavaScript incorporó la palabra reservada
+            Class y otros elementos conocidos de la Programación Orientada a
+            Objetos tradicional pero son sólo 'azúcar sintáctica' esto quiere
+            decir que JavaScript sigue trabajando con el Paradigma de Prototipos
+            pero ahora lo hace de forma más entendible para personas que vengan
+            de lenguajes POO tradicionales. <br />
+            En esta ocasión, vamos a trabajar con tres conceptos clave en el
+            Paradigma POO que son: Herencia, Polimorfismo y Encapsulamiento.
+            Para ello vamos a estar usando la sintaxis introducida en
+            ECMAScript 6 y la vamos a estar contrastando con la sintaxis
+            anterior para entender que es lo que está haciendo el intérprete en
+            cada momento.
+          </p>
+          <h3 class="mt-4">Herencia</h3>
+          <p>
+            La Herencia en POO es un herramienta utilizada para que Clases más
+            específicas obtengan propiedades y atributos de otras más generales.
+            <br />
+            Pensemos lo siguiente, al describir un auto podríamos decir que
+            tiene un marca, un modelo, acelera y frena. Ahora bien, esta
+            descripción también es válida para una moto o un avión. Esto no
+            significa que un auto tenga las mismas características que una moto
+            o un camión, pero sí que, al menos, comparten alguna. <br />
+            Para POO esto significa que la Clase Auto debería tener un formato
+            similar a la Clase Moto y la Clase Avión por lo que estaríamos
+            cayendo en una redundancia. Esto se soluciona generando una nueva
+            Clase, por ejemplo Vehículo, que tenga las propiedades modelo y
+            marca y los métodos acelerar y frenar para que la Clase Auto, la
+            Clase Moto y la Clase Avión puedan heredarlas. <br />
+            Las clases herederas (Auto, Moto y Avión) se comportarán diferente
+            una de otra aunque reciban los mismos métodos y propiedades.
+          </p>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-lg-2">
+              <div class="col mb-3">
+                <img src="assets/herenciaProto.PNG" alt="" width="100%" />
+              </div>
+              <div class="col">
+                <img src="assets/herenciaClass.PNG" alt="" width="100%" />
+              </div>
+            </div>
+          </div>
+          <h3 class="mt-4">Polimorfismo</h3>
+          <p>
+            Denominamos Polimorfismo al mecanismo que nos permite tener un
+            método en una clase padre como vimos en la herencia y
+            sobre-escribirlo en la clase hija. Esto quiere decir que tendremos
+            el mismo método en ambas clases, pero en la clase hija realizara
+            diferentes acciones. Por lo que el polimorfismo es también
+            denominado sobre-escritura de métodos.
+          </p>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-lg-2">
+              <div class="col mb-3">
+                <img src="assets/polimorfismoProto.PNG" alt="" width="100%" />
+              </div>
+              <div class="col">
+                <img src="assets/polimorfismoClass.PNG" alt="" width="100%" />
+              </div>
+            </div>
+          </div>
+          <h3 class="mt-4">Encapsulamiento</h3>
+          <p>
+            Decimos que el Encapsulamiento en la programación orientada a
+            objetos es cuando limitamos el acceso o damos un acceso restringido
+            de una propiedad a los elementos que necesita un miembro y no a
+            ninguno más. <br />
+            El elemento más común de encapsulamiento son las clases, donde
+            encapsulamos y englobamos tanto métodos como propiedades.
+            <br />
+            Todos los elementos encapsulados dentro de una clase son
+            considerados "privados" (pertenecen a esa clase en particular) y no
+            es posible usarlos ni leerlos por fuera de la clase a menos que lo
+            etiquetemos de "público" (o "protected" cuando queremos que sólo los
+            puedan usar las clases hijas).
+            <br />
+            La facultad de indicar que métodos y propiedades pueden ser "vistas"
+            por otras clases se conoce como Principio de Ocultación y se trabaja
+            a través de los "Modificadores de acceso" (private, public,
+            protected).
+            <br />
+            El Principio de Ocultación está pensado para evitar que se modifique
+            alguna propiedad o método que afecte al correcto funcionamiento de
+            la clase. Casi que por convención, cuando construimos una Clase
+            declaramos a nuestras propiedades como "privadas" y a nuestro
+            métodos como "públicos".
+            <br />
+            Ahora bien, es probable que para que nuestro programa funcione
+            necesitemos utilizar el valor almacenado en una propiedad "privada".
+            Para esos casos tenemos los "Getters" y "Setters".
+            <br />
+            Los Getters y Setters son métodos "públicos" pensados para
+            interactuar de forma segura con las propiedades "privadas". Los
+            Getters retornan el valor almacenado y los Setters lo modifican.
+            <br />
+            En JavaScript, ciertos elementos comunes de Encapsulamiento como los
+            "Modificadores de acceso" no son posibles de lograr ya que el
+            lenguaje no los soporta pero sí se emulan mediante convenciones de
+            escritura. Por ejemplo, si queremos que una propiedad sea
+            "Protegida" (se puede acceder desde la clase contenedora o las
+            herederas), debemos iniciar el nombre con un '_'. Ej: _propiedad.
+            <br />
+            Por otra parte, los getters y setters (métodos para poder trabajar
+            con propiedades de la clase) son considerados propiedades. <br />
+            Además, es posible crear métodos y propiedades de clase accesibles
+            sin la necesidad de generar una instancia de objeto. Estos son
+            conocidos como métodos y propiedades 'Estáticas'
+          </p>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-lg-2">
+              <div class="col mb-3">
+                <img src="assets/encapsulamiento.PNG" alt="" width="100%" />
+              </div>
+              <div class="col">
+                <img src="assets/static.PNG" alt="" width="100%" />
+              </div>
+            </div>
+          </div>
+          <footer class="text-end">
+            <small
+              >Informacion Adicional
+              <a href="https://es.javascript.info/prototypes">Prototipos</a> |
+              <a href="https://developer.mozilla.org/es/docs/conflicting/Learn/JavaScript/Objects/Classes_in_JavaScript"
+                >POO en JavaScript 1</a
+              >
+              |
+              <a
+                href=https://www.freecodecamp.org/espanol/news/programacion-orientada-a-objectos-en-javascript-explicado-con-ejemplos/"
+                >POO en JavaScript 2</a
+              ></small
+            >
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- POO -->
+    <script src="js/poo.js"></script>
+  </body>
+</html>

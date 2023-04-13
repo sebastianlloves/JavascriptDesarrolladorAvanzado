@@ -1,0 +1,19 @@
+Todos los ejercicios se encuentran resueltos en el archivo ejercicios.js
+
+/*
+  Utilizar el Patrón Módulo para crear:
+    => Un módulo que exporte Array de Objetos Empleado. La Clase Empleado debe inicializarse con un nombre y una edad; también debe tener un Método "imprimir" que retorne una fila de tabla con los datos de almacenados en los atributos nombre y edad. El Array debe contener, al menos, 2 empleados.
+    => Un módulo que importe el Array con los Objetos Empleado y use el Método "imprimir" de cada empleado para agregar una nueva fila a una tabla creada de forma dinámica. Los textos de cada th deben corresponder con los nombre de los atributos del Objeto Empleado
+*/
+
+
+/*
+  Utilizando la siguente API Rest "https://dog.ceo/api/breed/beagle/images/random" crear una aplicación que aplique el Patrón Singleton para impedir que el usuario pueda solicitar la imagen de un perro perteneciente a la misma raza 2 veces siguida.
+*/
+
+/*
+  Crear una Aplicación que use el Patrón Observador para permitir la selección de un color. El cambio de selección debe verse en 3 elementos distintos:
+    => 1 debe mostrar el nombre del color seleccionado
+    => 1 debe cambiar su color de fondo según la selección realizada
+    => 1 debe cambiar el color de la ltra según le selección realizada
+*/

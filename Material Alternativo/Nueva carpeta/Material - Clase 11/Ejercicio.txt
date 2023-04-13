@@ -1,0 +1,7 @@
+/*
+    Utilizando la API REST: https://randomuser.me/api/
+    Hacer una app que muestre los datos del usuario obtenido.
+    Utilizar módulos.
+    Resolución: "https://drive.google.com/drive/folders/1DIZJeDO-B-0LX41Bl1N3HZQxBJYBwpHo?usp=sharing"
+    Plantilla inicial: "https://drive.google.com/drive/folders/1DLPIBiixEye_utVEWIlv8fkX--c-7ZvN?usp=sharing"
+*/

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>JavaScript Avanzado</title>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar-->
+      <div class="border-end bg-white" id="sidebar-wrapper">
+        <span class="sidebar-heading border-bottom bg-light"
+          >Contacto:
+          <a href="mailto:anahiforesi.educacionit@gmail.com"
+            >Anahí Foresi</a
+          ></span
+        >
+        <ul class="list-group list-group-flush">
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="index.html"
+            >POO</a
+          >
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="seguridad.html"
+            >Seguridad y Errores</a
+          >
+          <a
+            class="list-group-item list-group-item-action list-group-item-light p-3"
+            href="ejercicios.html"
+            >Ejercicios</a
+          >
+        </ul>
+      </div>
+      <!-- Page content wrapper-->
+      <div id="page-content-wrapper">
+        <!-- Top navigation-->
+        <nav
+          id="barra"
+          class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
+        >
+          <div class="container-fluid">
+            <button class="btn btn-primary" id="sidebarToggle">Temas</button>
+            <h1>Clase 09</h1>
+          </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container-fluid">
+          <h2 class="mt-4">Seguridad de datos</h2>
+          <p>
+            A la hora de crear los distintos script que utilizaremos en nuestro
+            programas es importante recordar que todo archivo js agregado al
+            documento HTML será accesible desde el Objeto Global Window lo que
+            implica que todas la variables y funciones declaradas dentro de los
+            mismos pueden ser accesibles desde cualquier otro de los archivos
+            declarados en el mismo documento HTML. <br />
+            Esta es una característica que, bien utilizada, puede resultar
+            bastante útil a la hora de ordenar nuestro código pero puede generar
+            varios problemas relacionados con el espacio de almacenamiento.
+            <br />
+            Para evitar que el contenido de nuestros script se almacene en el
+            Objeto Global Window podemos ejecutar automáticamente una función
+            anónima contenedora de todo nuestro script, encapsulando de forma
+            efectiva a nuestro código. Las Funciones Anónimas que lo permiten
+            son conocidos como 'Immediately Invoked Function Expression (IIFE)'
+            (Función Anónima Auto-invocada). <br />
+            Las IIFE también nos sirven para crear scopes únicos dentro de un
+            mismo script lo que nos permitiría repetir nombres de variables y
+            constantes.
+          </p>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-lg-2">
+              <div class="col mb-3">
+                <img src="assets/IIFE.PNG" alt="" width="100%" style="max-width: 500px;" />
+              </div>
+              <div class="col">
+                <img src="assets/IIFE2.PNG" alt="" width="100%" style="max-width: 600px;" />
+              </div>
+            </div>
+          </div>
+
+          <h2 class="mt-4">Modo Estricto</h2>
+          <p>
+            El modo estricto cambia la sintaxis y el comportamiento en tiempo de
+            ejecución. Los cambios generalmente caen dentro de estas categorías:
+            <ul>
+              <li>cambios que convierten equivocaciones en errores (como errores de
+                sintaxis o en tiempo de ejecución)</li>
+              <li>cambios que simplifican cómo se
+                calcula el nombre de una variable particular</li>
+              <li>cambios que
+                simplifican el uso de eval y arguments</li>
+              <li>cambios que hacen más fácil
+                escribir JavaScript "seguro"</li>
+               <li>y cambios que anticipan la evolución
+                futura de ECMAScript</li> 
+            </ul>  
+            La mayoría de los navegadores ya implementan el modo estricto. Sin
+            embargo, no dependas ciegamente de él, ya que todavía hay numerosas
+            Versiones del navegador utilizadas en la naturaleza que solo tienen
+            soporte parcial para el modo estricto o no lo admiten en absoluto
+            (por ejemplo, Internet Explorer por debajo de la versión 10).
+            <br>
+            El modo estricto cambia la semántica. Depender de esos cambios
+            provocará equivocaciones y errores en los navegadores que no
+            implementan el modo estricto. Ten cuidado al usar el modo estricto y
+            respalda la dependencia del modo estricto con pruebas de funciones
+            que comprueben si se implementan las partes relevantes del modo
+            estricto. Finalmente, asegúrate de probar tu código en navegadores
+            que admitan y no admitan el modo estricto. Si realizas tus pruebas
+            solo en navegadores que no admiten el modo estricto, es muy probable
+            que tengas problemas en los navegadores que sí lo hacen, y
+            viceversa. <br />
+            Trabajar con Clases activa automáticamente el Modo Estricto.
+          </p>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-lg-2">
+              <div class="col mb-3">
+                <img src="assets/useStrict.PNG" alt="" width="100%" style="max-width: 500px;" />
+              </div>
+            </div>
+          </div>
+
+          <footer class="text-end">
+            <small
+              >Información Adicional
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Strict_mode"
+                >Modo Estricto</a
+              ></small
+            >
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
