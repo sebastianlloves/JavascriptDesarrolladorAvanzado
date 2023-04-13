@@ -21,8 +21,8 @@ let ReporteTodasTareas = function () {
 
 let ReporteTareasEnCurso = function () {
     let tareasEnCurso = AlmacenamientoTareas.filter(function(item){
-        return item.estado == 'En curso'}).texto
-    return tareasEnCurso.join()
+        return item.estado == 'En curso'})
+    return tareasEnCurso
 }
 
 let ReporteTareasPendientes = function () {
