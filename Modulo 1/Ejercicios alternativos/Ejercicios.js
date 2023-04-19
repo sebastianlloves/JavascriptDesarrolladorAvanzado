@@ -93,6 +93,8 @@ const impar = document.getElementById("impar")
 par.addEventListener("change", mostrar_pares)
 impar.addEventListener("change", mostrar_impares)
 
+body.insertAdjacentElement("afterbegin",)
+
 
 
 

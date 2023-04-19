@@ -1,12 +1,9 @@
 let AlmacenamientoTareas = []
 
-const AgregarTarea = function (tarea) {
-    AlmacenamientoTareas.push(tarea)
-}
+const AgregarTarea = tarea => AlmacenamientoTareas.push(tarea)
 
-const EditarTarea = function (texto_viejo, texto_nuevo) {
-    let indiceTarea = AlmacenamientoTareas.findIndex(texto_viejo)
-    AlmacenamientoTareas[indiceTarea] = texto_nuevo
+const EditarTarea = (texto_viejo, texto_nuevo) => {
+    console.log(AlmacenamientoTareas.find(texto_viejo))
 }
 
 const BorrarTarea = function (texto) {
