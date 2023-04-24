@@ -62,24 +62,31 @@ let articulos = [{
 
 
 
-const GenerarPagina = (array_objetos) => {
-    let fragmento = document.createDocumentFragment()
+const GenerarEstructura = () => {
+
     const main = document.getElementById("view")
     const formulario = document.createElement("form")
-    formulario.innerHTML = '<div class="index-page"><form id="search-form"><div><span>Nombre</span><input type="search" id="search-box" class="form-control"></div><div>Ordenar por<select name="orderBy" id="orderBy" class="form-control"><option value="nada">-</option><option value="mayorPrecio">Mayor precio</option><option value="menorPrecio">Menor precio</option></select></div><button class="btn">Buscar</button></form></div>'
+    formulario.innerHTML = `
+    <div class="index-page">
+        <form id="search-form">
+            <div><span>Nombre</span><input type="search" id="search-box" class="form-control"></div>
+            <div>Ordenar por<select name="orderBy" id="orderBy" class="form-control">
+                <option value="nada">-</option>
+                <option value="mayorPrecio">Mayor precio</option>
+                <option value="menorPrecio">Menor precio</option>
+                </select>
+            </div>
+            <button class="btn">Buscar</button>
+        </form>
+    </div>
+    <div id="listado"></div>`
 
-    const div_articulos = document.createElement("div")
-    div_articulos.className = "article-list"
-    div_articulos.innerHTML = HTMLArticulos(array_objetos)
+    main.append(formulario)
 
-    fragmento.appendChild(formulario)
-    fragmento.appendChild(div_articulos)
-
-    
-    main.appendChild(fragmento)
 }
 
-const HTMLArticulos = array_objetos => {
+const generarListadoArticulos = array_objetos => {
+
     let textoHTML = ''
     array_objetos.forEach(objeto => {
         textoHTML +=
@@ -94,16 +101,38 @@ const HTMLArticulos = array_objetos => {
             </div>
         </div>`
     })
-    return textoHTML
+
+    const listado = document.getElementById("listado")
+    listado.innerHTML = textoHTML
+
 }
 
-const HomePage = () => GenerarPagina(articulos)
+const HomePage = () => {
+    GenerarEstructura()
+    generarListadoArticulos(articulos)
+}
 
-HomePage()
+const OrdenarMen_May = () => {
+
+    articulos.sort((a, b) => a.precio - b.precio)
+    generarListadoArticulos(articulos)
+
+}
 
 const OrdenarMay_Men = () => {
-    articulos.sort((a, b) => a.precio - b.precio)
-    div_articulos.innerHTML = HTMLArticulos(array_objetos)
+
+    articulos.sort((a, b) => b.precio - a.precio)
+    generarListadoArticulos(articulos)
+
 }
 
-OrdenarMay_Men()
+document.addEventListener("change", (e) => {
+    if(e.target.matches('#orderBy')){
+        if(e.target.value == 'mayorPrecio') OrdenarMay_Men()
+        if(e.target.value == 'menorPrecio') OrdenarMen_May()
+    }
+    console.log(e.target.value)
+
+})
+
+HomePage()
