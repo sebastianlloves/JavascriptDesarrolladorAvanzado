@@ -70,19 +70,20 @@ const GenerarPagina = (array_objetos) => {
 
     const div_articulos = document.createElement("div")
     div_articulos.className = "article-list"
-    HTMLArticulos(array_objetos)
+    div_articulos.innerHTML = HTMLArticulos(array_objetos)
 
     fragmento.appendChild(formulario)
     fragmento.appendChild(div_articulos)
 
+    
     main.appendChild(fragmento)
 }
 
 const HTMLArticulos = array_objetos => {
     let textoHTML = ''
     array_objetos.forEach(objeto => {
-        textoHTML.innerHTML +=
-        `<div class="article" data-id=${objeto.id}>
+        textoHTML +=
+            `<div class="article" data-id=${objeto.id}>
             <div class="image" style="background-image: url(${objeto.urlImagen});"></div>
             <div class="content">
                 <div class="article-title">${objeto.nombre}</div>
@@ -93,14 +94,16 @@ const HTMLArticulos = array_objetos => {
             </div>
         </div>`
     })
-    div_articulos.innerHTML = textoHTML
+    return textoHTML
 }
 
 const HomePage = () => GenerarPagina(articulos)
 
 HomePage()
 
-/*     const OrdenarMay_Men = () => {
-        articulos.sort((a, b) => a.precio - b.precio)
-        GenerarPagina(articulos)
-    } */
+const OrdenarMay_Men = () => {
+    articulos.sort((a, b) => a.precio - b.precio)
+    div_articulos.innerHTML = HTMLArticulos(array_objetos)
+}
+
+OrdenarMay_Men()
