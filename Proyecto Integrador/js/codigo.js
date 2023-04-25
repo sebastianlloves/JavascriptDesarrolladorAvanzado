@@ -126,15 +126,36 @@ const OrdenarMay_Men = () => {
 
 }
 
+
+const busqueda = cadena_busqueda => {
+    let array_busqueda = articulos.filter(objeto => objeto.nombre.includes(cadena_busqueda) || objeto.nombre.includes(cadena_busqueda.charAt(0).toUpperCase() + cadena_busqueda.slice(1)))
+    generarListadoArticulos(array_busqueda)
+}
+
+
+HomePage()
+
+
 document.addEventListener("change", (e) => {
-    if(e.target.matches('#orderBy')){
-        if(e.target.value == 'mayorPrecio') OrdenarMay_Men()
-        if(e.target.value == 'menorPrecio') OrdenarMen_May()
+    if (e.target.matches('#orderBy')) {
+        if (e.target.value == 'mayorPrecio') OrdenarMay_Men()
+        if (e.target.value == 'menorPrecio') OrdenarMen_May()
     }
+
     console.log(e.target.value)
 
 })
 
-HomePage()
+document.addEventListener("search", (e) => {
+
+    if (e.target.matches('#search-box')) {
+        busqueda('hand')
+    }
+    console.log(input.value);
+
+})
+
+
+
 
 
