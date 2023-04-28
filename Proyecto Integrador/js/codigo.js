@@ -134,6 +134,7 @@ const busqueda = cadena_busqueda => {
 
 
 HomePage()
+busqueda('hand')
 
 
 document.addEventListener("change", (e) => {
@@ -142,18 +143,30 @@ document.addEventListener("change", (e) => {
         if (e.target.value == 'menorPrecio') OrdenarMen_May()
     }
 
-    console.log(e.target.value)
+    if (e.target.matches('#search-box')) {
+        busqueda('hand')
+    }
 
 })
 
 document.addEventListener("search", (e) => {
-
+    e.preventDefault()
+    e.stopPropagation()
     if (e.target.matches('#search-box')) {
         busqueda('hand')
     }
     console.log(input.value);
-
 })
+
+/* document.addEventListener("search", (e) => {
+
+    if (e.target.matches('#search-box')) {
+        e.preventDefault()
+        busqueda('hand')
+    }
+    console.log(input.value);
+
+}) */
 
 
 
