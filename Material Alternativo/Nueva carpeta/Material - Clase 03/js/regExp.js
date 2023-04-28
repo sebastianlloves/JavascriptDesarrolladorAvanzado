@@ -198,3 +198,40 @@ console.log("Búsqueda de palabras: ", str.match(regParrafo));
 
 const regNum = /^-?\d+(\.\d+)?$/g;
 console.log("Validación Números: ", regNum.test("-1.5"));
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+var regExp = /^gato y perro$/gi;
+console.log("ssssssssssssGato y perro".match(regExp))
+console.log("gato y perro".match(regExp))
+console.log("gato y Perro".match(regExp))
+console.log("Gato y Perro".match(regExp))
+
+regExp = /^[0-9]( )*[º,ª,°]( )*[0-9]( )*[º,ª,°](.)*$/g;
+console.log(("1°2°").trim().match(regExp))
+console.log((" 1°2°").trim().match(regExp))
+console.log((" 1° 2°").trim().match(regExp))
+console.log((" 1° 2° ").trim().match(regExp))
+console.log(("1°  2° ").trim().match(regExp))
+console.log(("1 ° 2 ° 2023").trim().match(regExp))
+console.log(("1°2 ° asdasd").trim().match(regExp))
+
+regExp = /[0-9]/g;
+console.log(("1°2°") .match(regExp))
+console.log((" 1°2°") .match(regExp))
+console.log((" 1° 2°") .match(regExp))
+console.log((" 1° 2° ") .match(regExp))
+console.log(("1°  2° ") .match(regExp))
+console.log(("1 ° 2 ° 2023") .match(regExp))
+console.log(("1°2 ° asdasd") .match(regExp))
+
+
+regExp = /[A-Z]/g
+console.log("12345  _uNo".match(regExp))
+
+regExp = /^(?=.+[A-Z])(?=.+[a-z])(?=.+[0-9])(?=.+[$@!_¡?])[A-z\d$@!_¡?]{8,16}$/g
+console.log(("000000!Aa2") .match(regExp))
+
+// regExp = /^(.)*[A-Z]?(.)*[a-z]?(.)*[0-9]?${8,16}/g
