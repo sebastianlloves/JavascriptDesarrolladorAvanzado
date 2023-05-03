@@ -12,17 +12,6 @@ h3.innerText = ''
 
 
 
-document.addEventListener("click", (e) => {
-    e.preventDefault()
-    if (e.target.matches("#btn")) {
-        if (usuario.value == '' || contraseña.value == '' || comentarios.value == '') {
-            h3.innerText = 'Debe completar todos los campos para poder enviar el formulario'
-        } else {
-            h3.style.color = "green"
-            h3.innerText = 'El formulario se ha enviado correctamente'
-        }
-    }
-})
 /* 
 const span_usuario = document.getElementById("sp_usuario")
 span_usuario.style.color = "red"
@@ -55,21 +44,78 @@ document.addEventListener("input", (e) => {
  */
 
 const inputs = document.querySelectorAll('#formulario input,#formulario textarea')
+let usuario_valido = false;
+let email_valido = false;
+let comentarios_valido = false;
 console.log(inputs);
-console.log(/[0-9]/g.test(usuario.value));
 
 document.addEventListener("input", (e) => {
     inputs.forEach(input => {
-        if (e.target.id === 'usuario' && /[0-9]/g.test(input.value)) {
-            const span = document.createElement("span")
+        let span = document.getElementById(`span_${input.id}`)
+        if (!span) {
+            span = document.createElement("span")
             span.id = (`span_${input.id}`)
-            span.innerText = `El campo no puede inlcuir numeros`
-            usuario.insertAdjacentElement("afterend", span)
-            console.log(`Entró`)
+            input.insertAdjacentElement("afterend", span)
         }
     })
 
+
+    if (e.target.id === 'usuario') {
+        if (/[0-9]/g.test(e.target.value)) {
+            document.getElementById(`span_${e.target.id}`).innerText = ` El campo no puede inlcuir numeros`
+            usuario_valido = false
+        } else if (e.target.value == '') {
+            document.getElementById(`span_${e.target.id}`).innerText = ` Este campo es obligatorio`
+            usuario_valido = false
+        } else {
+            document.getElementById(`span_${e.target.id}`).innerText = ``
+            usuario_valido = true
+        }
+    }
+
+    if (e.target.id === 'email') {
+        if (!(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g).test(e.target.value)) {
+            document.getElementById(`span_${e.target.id}`).innerText = ` Debe ingresar un mail válido`
+            email_valido = false
+        } else {
+            document.getElementById(`span_${e.target.id}`).innerText = ``
+            email_valido = true
+        }
+        if (e.target.value == '') {
+            document.getElementById(`span_${e.target.id}`).innerText = ` Este campo es obligatorio`
+            email_valido = false
+        }
+    }
+
+    if (e.target.id === 'comentarios') {
+        if (!(/^.{0,150}$/g).test(e.target.value)) {
+            document.getElementById(`span_${e.target.id}`).innerText = ` El comentario es demasiado largo`
+            comentarios_valido = false
+        } else {
+            document.getElementById(`span_${e.target.id}`).innerText = ``
+            comentarios_valido = true
+        }
+    }
+
+
+    console.log(`Usuario válido: ${usuario_valido}`);
+    console.log(`Mail válido: ${email_valido}`);
+    console.log(`Comentarios válido: ${comentarios_valido}`);
 })
 
+document.addEventListener("click", (e) => {
+    e.preventDefault()
+    if (e.target.matches("#btn")) {
+        if (usuario.value == '' || contrasena.value == '' || comentarios.value == '') {
+            h3.innerText = 'Debe completar todos los campos para poder enviar el formulario'
+        }else if ( !usuario_valido || !email_valido || !comentarios_valido) {
+            h3.style.color = "red"
+            h3.innerText = 'Revise los campos'
+        } else {
+            h3.style.color = "green"
+            h3.innerText = 'El formulario se ha enviado correctamente'
+        }
+    }
+})
 
 
