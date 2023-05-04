@@ -1,0 +1,13 @@
+Ejercicio resuelto en archivo ejercicios.js
+
+/*
+  Crear un cuadrado dinámico que debe aparecer en la pantalla 1,5 segundos después de que se haya cargado el contenido del DOM. Debe usar los colores dentro del siguiente array para cambiar su background. Los colores deben mostrarse cada 1,5 segundos
+  const colores = ["red", "yellow", "green"];
+*/
+
+/*
+  1. Generar un form que permita obtener nombre de usuario y contraseña
+  2. Obtener información almacencada en el JSON bd.json usando AJAX
+  3. Validar los datos obtenidos en el form contra los datos obtenidos mediante AJAX
+  4. Mostrar si el usuario puede o no ingresar	 	
+*/
