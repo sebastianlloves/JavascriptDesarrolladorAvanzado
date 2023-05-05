@@ -16,5 +16,11 @@
     "user": "Pepito",
     "pass": "Pepito",
     "role": "user"
+  },
+  {
+    "id": "4",
+    "user": "Seba",
+    "pass": "Seba",
+    "role": "user"
   }
 ]
