@@ -49,7 +49,7 @@ console.log(origin)
 console.log(cop);
 
 const arr1 = ['a', 'b']
-const arr2 = [...arr1,'d']
+const arr2 = [...arr1]
 console.log(arr1);
 console.log(arr2);
 arr1.push('c')
