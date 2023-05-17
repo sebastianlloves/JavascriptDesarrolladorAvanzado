@@ -1,11 +1,3 @@
-const ajax = (url, metodo) => {
-    const metodoHTTP = metodo || 'GET'
-    const xhr = new XMLHttpRequest()
-    xhr.open(metodoHTTP, url)
-    xhr.send()
-    return xhr
-}
-
 let articulos
 
 window.addEventListener("load", () => {
@@ -20,28 +12,42 @@ window.addEventListener("load", () => {
             console.log('No cargó los datos');
         }
     })
-
 })
 
 document.addEventListener("submit", e =>{
     e.preventDefault()
     const selector = document.querySelector("#orderBy")
     console.log(selector.value)
-    const articulos_original = [...articulos]
     switch (selector.value) {
         case 'menorPrecio':
             articulos.sort((a, b) => a.precio - b.precio)
-            generarListadoArticulos(articulos)
             break;
         case 'mayorPrecio':
             articulos.sort((a, b) => b.precio - a.precio)
-            generarListadoArticulos(articulos)
             break;
-        case 'nada':
-            generarListadoArticulos(articulos_original)
-            break
     }
+
+    const cadena_busqueda = document.querySelector("#search-box").value
+    console.log(cadena_busqueda)
+      
+    generarListadoArticulos(busqueda(cadena_busqueda))
+
 })
+
+
+
+
+
+// <<===================  Funciones   ===================>>
+
+
+const ajax = (url, metodo) => {
+    const metodoHTTP = metodo || 'GET'
+    const xhr = new XMLHttpRequest()
+    xhr.open(metodoHTTP, url)
+    xhr.send()
+    return xhr
+}
 
 
 const GenerarEstructura = () => {
@@ -91,63 +97,8 @@ const HomePage = () => {
     generarListadoArticulos(articulos)
 }
 
-/* const OrdenarMen_May = () => {
-
-    articulos.sort((a, b) => a.precio - b.precio)
-    
-
-}
-
-const OrdenarMay_Men = () => {
-
-    articulos.sort((a, b) => b.precio - a.precio)
-    generarListadoArticulos(articulos)
-
-}
-
 
 const busqueda = cadena_busqueda => {
     let array_busqueda = articulos.filter(objeto => objeto.nombre.includes(cadena_busqueda) || objeto.nombre.includes(cadena_busqueda.charAt(0).toUpperCase() + cadena_busqueda.slice(1)))
-    generarListadoArticulos(array_busqueda)
+    return array_busqueda
 }
-
-
-
-busqueda('hand')
-
-
-document.addEventListener("change", (e) => {
-    if (e.target.matches('#orderBy')) {
-        if (e.target.value == 'mayorPrecio') OrdenarMay_Men()
-        if (e.target.value == 'menorPrecio') OrdenarMen_May()
-    }
-
-    if (e.target.matches('#search-box')) {
-        busqueda('hand')
-    }
-
-})
-
-document.addEventListener("search", (e) => {
-    e.preventDefault()
-    e.stopPropagation()
-    if (e.target.matches('#search-box')) {
-        busqueda('hand')
-    }
-    console.log(input.value);
-}) */
-
-/* document.addEventListener("search", (e) => {
-
-    if (e.target.matches('#search-box')) {
-        e.preventDefault()
-        busqueda('hand')
-    }
-    console.log(input.value);
-
-}) */
-
-
-
-
-
