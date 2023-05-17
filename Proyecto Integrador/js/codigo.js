@@ -16,9 +16,35 @@ window.addEventListener("load", () => {
 
 document.addEventListener("submit", e =>{
     e.preventDefault()
-    const selector = document.querySelector("#orderBy")
-    console.log(selector.value)
-    switch (selector.value) {
+    const cadena_busqueda = e.target[0].value
+    const orden_busqueda = e.target[1].value
+    renderizarBusqueda( cadena_busqueda, orden_busqueda )
+
+    history.pushState({},"",`?q=${e.target[0].value}&s=${e.target[1].value}`)
+    console.log(location.search);
+    console.log(`valor_orden: ${location.search.split("&s=")[1]}`);
+    console.log(`cadena_busqueda: ${location.search.split("&s=")[0].split("?q=")[1]}`);
+})
+
+window.addEventListener("popstate", () => {
+    const cadena_busqueda = location.search.split("&s=")[0].split("?q=")[1]
+    const orden_busqueda = location.search.split("&s=")[1]
+    renderizarBusqueda( cadena_busqueda, orden_busqueda )
+
+    const barra_busqueda = document.querySelector("#search-box")
+    barra_busqueda.value = cadena_busqueda
+    const seleccion_orden = document.querySelector("#orderBy") 
+    seleccion_orden.value = orden_busqueda
+})
+
+
+
+// <<===================  Funciones   ===================>>
+
+
+
+const renderizarBusqueda = ( cadena, orden ) => {
+    switch (orden) {
         case 'menorPrecio':
             articulos.sort((a, b) => a.precio - b.precio)
             break;
@@ -27,18 +53,8 @@ document.addEventListener("submit", e =>{
             break;
     }
 
-    const cadena_busqueda = document.querySelector("#search-box").value
-    console.log(cadena_busqueda)
-      
-    generarListadoArticulos(busqueda(cadena_busqueda))
-
-})
-
-
-
-
-
-// <<===================  Funciones   ===================>>
+    generarListadoArticulos(busqueda(cadena))
+}
 
 
 const ajax = (url, metodo) => {
