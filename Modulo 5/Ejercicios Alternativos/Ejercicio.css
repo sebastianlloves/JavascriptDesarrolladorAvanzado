@@ -1,0 +1,28 @@
+#visualizador{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ficha_pokemon{
+    width: 60%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+img{
+    width: 200px;
+}
+
+ul{
+    list-style-position: inside;
+}
+
+li{
+    list-style: none;
+}
