@@ -1,4 +1,4 @@
-const listado = [
+/* const listado = [
     { id: 1, nombre: "Carlos" },
     { id: 2, nombre: "Andrea" },
     { id: 3, nombre: "Lorenzo" },
@@ -45,3 +45,13 @@ const pipe = [buscarID, buscarDeudas, mostrarPantalla]
 
 pipe.reduce( (acumulador, fnActual) => fnActual(acumulador), obtenerNombre())
 
+ */
+this.a = 'Seba'
+const mostrarThis = () => {
+    console.log(this.a)
+}
+
+let a2 = {a: 'Pepe', mostrarThis}
+
+mostrarThis()
+a2.mostrarThis()
