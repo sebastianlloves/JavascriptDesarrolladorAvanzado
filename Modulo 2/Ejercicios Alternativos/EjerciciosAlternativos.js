@@ -2,6 +2,25 @@
 
 //Hacer una galería de imágenes
 
+function crearIterable (array){
+    this.array = array
+    this.i = 0
+    this.first = () => this.array[0]
+    this.next = () => {
+        this.i ++
+        return {value: this.array[this.i], done: !this.hasNext()}
+    }
+    this.hasNext = () => this.i + 1 < this.array.length
+    this.reset = () => this.i = 0
+
+    return {
+        first,
+        next,
+        hasNext,
+        reset
+    }
+}
+
 const imagen_central = document.querySelector(".imgCentral")
 const imagenes = document.querySelectorAll(".carrusel")
 imagen_central.src = imagenes[3].src
