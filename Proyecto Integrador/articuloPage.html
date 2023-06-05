@@ -18,7 +18,20 @@
             <h1>Tienda</h1>
         </header>
 
-        <main id="view"></main>
+        <main id="view">
+
+            <div class="article" data-id=${objeto.id}>
+                <div class="image" style="background-image: url(${objeto.urlImagen});"></div>
+                <div class="content">
+                    <div class="article-title">${objeto.nombre}</div>
+                    <div class="article-price">
+                        <span class="article-price-currency">$</span>
+                        <span class="article-price-value">${objeto.precio}</span>
+                    </div>
+                </div>
+            </div>
+
+        </main>
         
     </div>
 
