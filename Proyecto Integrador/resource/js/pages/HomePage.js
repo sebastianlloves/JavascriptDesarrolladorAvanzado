@@ -1,18 +1,15 @@
-let articulos;
+let articulos 
+hacerFetch('bd.json')
 
-window.addEventListener("load", () => {
-  const llamada = ajax("bd.json", "get");
-  llamada.addEventListener("load", () => {
-    if (llamada.status === 200) {
-      articulos = JSON.parse(llamada.response);
-      console.log(articulos);
-      HomePage();
-    } else {
-      const error = new Error();
-      console.log("No cargó los datos");
-    }
-  });
-});
+async function hacerFetch (url) {
+  await fetch(url)
+    .then( respuesta => {
+      if(!respuesta.ok) throw new Error ('No se conectó')
+      return respuesta.json()
+    })
+    .then ( json => articulos = json)
+    .catch( error => console.log(error))
+}
 
 document.addEventListener("submit", (e) => {
   e.preventDefault();
