@@ -1,15 +1,4 @@
-let articulos 
-hacerFetch('bd.json')
-
-async function hacerFetch (url) {
-  await fetch(url)
-    .then( respuesta => {
-      if(!respuesta.ok) throw new Error ('No se conectó')
-      return respuesta.json()
-    })
-    .then ( json => articulos = json)
-    .catch( error => console.log(error))
-}
+document.addEventListener("DOMContentLoaded", () => HomePage())
 
 document.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -35,6 +24,22 @@ window.addEventListener("popstate", () => {
   const seleccion_orden = document.querySelector("#orderBy");
   seleccion_orden.value = orden_busqueda;
 });
+
+
+document.addEventListener("click" , e => {
+  if(e.target.matches(".image")){
+    const url_imagen = e.target.style.backgroundImage.split("\"")[1]
+    const id = articulos.filter( articulo => articulo.urlImagen == url_imagen)[0].id
+    history.pushState({}, "", `/Proyecto%20Integrador/articulo.id=${id} `)
+    console.log(location.pathname)
+  }
+})
+
+
+
+
+
+
 
 // <<===================  Funciones   ===================>>
 
@@ -78,7 +83,7 @@ const GenerarEstructura = () => {
     </div>
     <div id="listado"></div>`;
   main.append(formulario);
-};
+}
 
 const generarListadoArticulos = (array_objetos) => {
   let textoHTML = "";
@@ -114,4 +119,5 @@ const busqueda = (cadena_busqueda) => {
       )
   );
   return array_busqueda;
-};
+}
+
