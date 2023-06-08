@@ -1,6 +1,19 @@
-function cuadrado (n){
-    const resultado = n*n
-    return resultado
+function mostrarThis (){
+    console.log(this);
+}
+const obj = {a: (mostrarThis), b: 'Hola', c: prueba}
+
+function prueba (){
+    mostrarThis()
 }
 
-console.log(cuadrado);
+mostrarThis()
+obj.a()
+obj.c.apply(obj)
+
+const arr1 = [1,2]
+
+const [f,g] = arr1
+
+console.log(arr1);
+console.log(f,g);
