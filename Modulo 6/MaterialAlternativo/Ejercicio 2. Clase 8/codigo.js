@@ -28,6 +28,7 @@ function stateCalculadora () {
     }
 }
 
+
 function setState (newState) {
     const state = this.state
     for (const key in newState) {
@@ -35,5 +36,5 @@ function setState (newState) {
             state[key] = newState[key];
         }
     }
+    return state
 }
-
