@@ -37,3 +37,6 @@ function setState (newState) {
     }
 }
 
+function update (btn){
+    const isNumb
+}
