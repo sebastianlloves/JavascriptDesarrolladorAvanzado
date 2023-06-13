@@ -169,7 +169,6 @@ function update(btn) {
       }
     }
   } else if (isNumber && hasOperator) {
-    const inputLength = this.state.input.length;
 
     this.state = this.addNumberToInput(btn);
     this.notify(this.state);

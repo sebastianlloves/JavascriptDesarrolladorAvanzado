@@ -15,25 +15,26 @@ function stateCalculadora () {
             entrada: [],
             operador : ''
         },
-        subscribers : [],
-        suscribe: function (subscriber){
-            this.subscribers.push(subscriber)
+        observadores : [],
+    agregarObservador: function (observador){
+            this.observadores.push(observador)
         }, 
         notify: function (value) {
-            this.subscribers.forEach( subscriber => {
-                subscriber.notify(value)
+            this.observadores.forEach( observador => {
+                observador.notify(value)
             } )
         },
-        setState
-    }
-}
-
-
-function setState (newState) {
-    const state = this.state
-    for (const key in newState) {
-        if (state.hasOwnProperty(key)) {
-            state[key] = newState[key];
+        setState: function (nuevoState){
+            const stateActual = this.state
+            for (const key in nuevoState) {
+                if (stateActual.hasOwnProperty(key)) {
+                    stateActual[key] = nuevoState[key]                    
+                }
+            }
+            return stateActual
         }
+
     }
 }
+
+
