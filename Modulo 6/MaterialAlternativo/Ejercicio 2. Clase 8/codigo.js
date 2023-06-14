@@ -1,12 +1,6 @@
-
-
 const visor = document.getElementById("result")
-visor.innerText = 0
 
 
-const numeros = document.querySelectorAll(".number")
-
-numeros.forEach( boton => console.log(Number(boton.innerHTML)) )
 
 function stateCalculadora () {
     return {
@@ -16,7 +10,7 @@ function stateCalculadora () {
             operador : ''
         },
         observadores : [],
-    agregarObservador: function (observador){
+        agregarObservador: function (observador){
             this.observadores.push(observador)
         }, 
         notify: function (value) {
@@ -32,8 +26,16 @@ function stateCalculadora () {
                 }
             }
             return stateActual
+        },
+        start: function (){
+            this.notify(this.state)
+        },
+        clearResult: function(){
+            return this.setState({resultado: 0, entrada: [], operador: 'C'})
+        },
+        addNumberToInput: function (btn){
+            return this.setState({entrada: [...this.state.entrada, Number(btn.textContent)]}) 
         }
-
     }
 }
 

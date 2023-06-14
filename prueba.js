@@ -1,12 +1,13 @@
 function mostrarThis (){
     console.log(this);
 }
-const obj = {a: (mostrarThis), b: 'Hola', c: prueba}
+const obj = {a: mostrarThis, b: 'Hola', c: prueba}
 
 function prueba (){
     mostrarThis()
 }
 
+prueba()
 mostrarThis()
 obj.a()
 obj.c.apply(obj)
