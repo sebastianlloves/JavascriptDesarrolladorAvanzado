@@ -18,3 +18,8 @@ const [f,g] = arr1
 
 console.log(arr1);
 console.log(f,g);
+
+console.log(Array.isArray(obj))
+
+const arr2 = arr1.map(elemento => elemento+1)
+console.log(arr2);

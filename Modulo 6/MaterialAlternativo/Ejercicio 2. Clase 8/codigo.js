@@ -15,7 +15,7 @@ function stateCalculadora () {
         }, 
         notify: function (value) {
             this.observadores.forEach( observador => {
-                observador.notify(value)
+                observador.accion(value)
             } )
         },
         setState: function (nuevoState){
@@ -35,8 +35,35 @@ function stateCalculadora () {
         },
         addNumberToInput: function (btn){
             return this.setState({entrada: [...this.state.entrada, Number(btn.textContent)]}) 
+        },
+        actualizar: function (btn){
+            if (btn.classList.contains("number")){
+                if(!this.state.operador) {
+                    this.notify(this.setState({resultado: Number(btn.textContent)}) )
+                }
+            }
         }
     }
 }
+
+
+function observador (fn){
+    return {
+        accion: fn
+    }
+}
+
+const observadorVisor = observador(reaccionVisor)
+
+function reaccionVisor (estado) {
+    visor.innerText = estado.resultado
+}
+
+stateCalculadora().agregarObservador(observadorVisor)
+
+document.addEventListener("click", e => {
+    stateCalculadora().actualizar(e.target)
+})
+
 
 
