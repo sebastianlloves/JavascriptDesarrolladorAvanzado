@@ -18,3 +18,5 @@ const [f,g] = arr1
 
 console.log(arr1);
 console.log(f,g);
+
+if(Number('+'))console.log('Dió true')

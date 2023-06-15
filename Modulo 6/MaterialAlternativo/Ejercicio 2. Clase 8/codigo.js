@@ -35,6 +35,9 @@ function stateCalculadora () {
         },
         addNumberToInput: function (btn){
             return this.setState({entrada: [...this.state.entrada, Number(btn.textContent)]}) 
+        },
+        update: function (btn){
+            if(Number(btn.textContent)) this.state.entrada
         }
     }
 }
