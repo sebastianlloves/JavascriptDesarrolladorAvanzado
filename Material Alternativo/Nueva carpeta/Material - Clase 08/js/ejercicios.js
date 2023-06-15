@@ -282,6 +282,8 @@ const viewInput = updateView((state) => {
 const state = stateCalculadora();
 state.suscribe(viewInput);
 
+
+
 //Delegación de Evento Click para actualización de vista
 calculadora.addEventListener("click", ({ target }) => {
   state.update(target);
