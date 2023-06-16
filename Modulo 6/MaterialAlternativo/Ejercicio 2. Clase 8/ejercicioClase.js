@@ -26,29 +26,28 @@ const hacerFetch = async function (url){
 function observable (){
     return {
         state: {
-            usuarios: []
+            usuarios: [1,4]
         },
         observadores: [],
         agregarObservador: function (observador){
             this.observadores.push(observador)
         },
-        notificar: function(state){
-            this.observadores.forEach( observador => observador.notificarse(state) )
+        notificar: function(estado){
+            this.observadores.forEach( observador => observador.notificarse(estado) )
         },
         setState: function (newState) {
             for (const key in newState) {
                 if (this.state.hasOwnProperty(key)) this.state[key] = newState[key]  
             }
             this.notificar(this.state)
+            return this.state
         },
         start: async function (url){
             this.agregarObservador(viewInput)
             this.setState({usuarios: (await hacerFetch(url)).map( obj => obj.userName)})
         },
         agregarUsuario: function (usuario){
-            this.setState( {usuarios: [...this.state.usuarios, usuario]} )
-            console.log(this.state);
-            this.notificar(this.state)
+            this.notificar(this.setState( {usuarios: [...this.state.usuarios, usuario]} ))
         }
     }
 }
@@ -83,10 +82,16 @@ function renderizar (array){
 }
 
 
+const state = observable()
 
-document.addEventListener("DOMContentLoaded", observable().start("https://62633b22c430dc560d2cf4d6.mockapi.io/users"))
+document.addEventListener("DOMContentLoaded", state.start("https://62633b22c430dc560d2cf4d6.mockapi.io/users"))
 
-observable().agregarUsuario('Seba')
+document.addEventListener("submit", e => {
+    e.preventDefault()
+    const input = document.getElementById("nombre")
+    state.agregarUsuario(input.value)
+})
+
 
 
 
