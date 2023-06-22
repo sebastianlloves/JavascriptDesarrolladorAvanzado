@@ -1,4 +1,4 @@
-function mostrarThis (){
+/* function mostrarThis (){
     console.log(this);
 }
 const obj = {a: mostrarThis, b: 'Hola', c: prueba}
@@ -26,4 +26,6 @@ const arr2 = arr1.map(elemento => {
        return elemento
     }
 })
-console.log(arr2);
+console.log(arr2); */
+const a = {}
+console.log(a);

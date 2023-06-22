@@ -107,7 +107,7 @@ contenedorResultados.appendChild(fragment);
       -> 1 función "render" que debe retornar la vista de los elementos almacenados en el Array
     => El objeto creado con la función "AgregarDatos"
       -> 1 función "render" que debe retornar la vista de un formulario que tenga un input para que el usuario pueda ingresar un valor.
-    -> 1 función "handleSubmit" que se ejecute como callback del evento submit y ejecute la función "add" generada en "MostrarArray" en para usar los datos del input como argumentos de la ejecución de la misma;
+      -> 1 función "handleSubmit" que se ejecute como callback del evento submit y ejecute la función "add" generada en "MostrarArray" en para usar los datos del input como argumentos de la ejecución de la misma;
     => Fundamental mantener actualizada la vista con los valores en el Array
 */
 

@@ -1,32 +1,53 @@
+const vista = document.getElementById("view")
+
 function MostrarArray (array){
-    return {
-        array,
-        add: function (valor){
-            this.arr.push(valor)
-        },
-        render: function (){
-            const vista = document.getElementById("view")
-            vista.innerHTML = `<ul>${this.array.map( elemento => `<li>${elemento}</li>`).join("")}</ul>`
-        }
+    this.arr = array
+    this.add = function (valor){
+        this.arr.push(valor)
+    }
+    this.render = function (){
+        return `<ul>${this.arr.map( elemento => `<li>${elemento}</li>`).join("")}</ul>`
     }
 }
 
 
-function AgregarDatos (){
-    return {
-        render: function () {
-            const formulario = document.createElement("form")
-            formulario.innerHTML = `
-            <form action="">
-                <input type="text" name="" id=""><br><br>
-                <button type="submit">Agregar</button>
-            </form>
-            `
-            const vista = document.getElementById("view")
-            vista.insertAdjacentElement("afterend", formulario)
-        }
+function AgregarDatos (contexto){
+    this.render = function () {
+        return `
+        <form action="">
+            <input type="text" name="" id="entrada"><br><br>
+            <button type="submit">Agregar</button>
+        </form>
+        `
     }
+
+/*     this.handleSubmit = function (valor){
+        this.add.call(contexto, valor)
+    } */
+
+    this.add = function (valor) {
+        this.add.call(contexto, valor)
+    }
+
 }
 
-MostrarArray([1,2,3]).render()
-AgregarDatos().render()
+const objeto = new MostrarArray([1,2,3,9])
+const agregar = new AgregarDatos(objeto)
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    vista.innerHTML = objeto.render()
+    vista.innerHTML += agregar.render()
+})
+
+
+document.addEventListener("submit", e => {
+    e.preventDefault()
+    const input = document.getElementById("entrada")
+    agregar.add(input.value);
+    vista.innerHTML = objeto.render()
+    vista.innerHTML += agregar.render()
+})
+
+
