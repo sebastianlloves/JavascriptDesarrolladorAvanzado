@@ -26,7 +26,7 @@ function AgregarDatos (contexto){
     } */
 
     this.add = function (valor) {
-        this.add.call(contexto, valor)
+        this.add.apply(contexto, [valor])
     }
 
 }
@@ -49,5 +49,4 @@ document.addEventListener("submit", e => {
     vista.innerHTML = objeto.render()
     vista.innerHTML += agregar.render()
 })
-
 
