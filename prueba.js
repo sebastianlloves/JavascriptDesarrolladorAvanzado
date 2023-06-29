@@ -27,10 +27,27 @@ const arr2 = arr1.map(elemento => {
     }
 })
 console.log(arr2); */
-const keys = ['1nombre y apellido', 'edad']
+
+
+/* const keys = ['1nombre y apellido', 'edad']
 
 const a = {}
 keys.forEach(key => a[key] = key)
 console.log(a);
 delete a['1nombre y apellido']
-console.log('1nombre y apellido' in a)
+console.log('1nombre y apellido' in a) */
+
+
+const obj = {}
+obj.edad = 24
+Object.defineProperty(obj, 'nombre', {
+    configurable: false,
+    writable: false,
+    value: 'Seba'
+})
+
+delete obj.nombre
+obj.edad = 'Pepe'
+
+
+console.log(obj);
