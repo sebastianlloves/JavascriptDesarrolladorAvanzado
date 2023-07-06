@@ -5,27 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página para pruebas</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300&display=swap"
       rel="stylesheet"
-    />
+    /> -->
   </head>
   <body>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300&display=swap");
+    </style>
     <h1
-      style="
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        font-size: 50px;
-        color: rgb(138, 14, 14);
-        text-align: center;
-        line-height: 1em;
-      "
-    >
-      IMPORTANTE
-    </h1>
-    <h2
       style="
         font-family: 'Poppins', sans-serif;
         font-weight: 700;
@@ -34,32 +25,66 @@
         line-height: 1em;
       "
     >
-      Tu inscripción NO pudo concretarse
-    </h2>
+      Tu inscripción se proceso correctamente
+    </h1>
     <br />
     <p
       style="
         font-family: 'Poppins', sans-serif;
         font-weight: 400;
         font-size: 20px;
-        line-height: 1em;
+        line-height: 1.5em;
       "
     >
-      El DNI ingresado en el formulario (37541474) no figura en nuestro registro
-      de Estudiantes Regulares.
+      <span style="text-decoration: underline;"">Alumno/a:</span> ${obj_respuesta.apellido}, ${obj_respuesta.nombre}
     </p>
     <p
       style="
         font-family: 'Poppins', sans-serif;
         font-weight: 400;
         font-size: 20px;
-        line-height: 1em;
+        line-height: 1.5em;
       "
     >
-      Por favor, acercate con tu DNI a Regencia para poder chequear la
-      información.
+      <span style="text-decoration: underline;"">DNI:</span> ${obj_respuesta['DNI']}
     </p>
-    <br /><br /><br />
+    <p
+      style="
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.5em;
+      "
+    >
+      <span style="text-decoration: underline;"">Curso:</span> ${obj_respuesta.ano}° ${obj_respuesta.division}°
+    </p>
+    <p
+      style="
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.5em;
+      "
+    >
+      <span style="text-decoration: underline;"">Materia/s:</span>
+    </p>
+    <ul
+      style="
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.5em;
+        list-style: none;
+        padding-top: 0px;
+      "
+    >
+      <li>Tecnol. de la Representación (2º año)</li>
+      <li>Matemática (3º año)</li>
+    </ul>
+    
+    
+    
+    <br /><br /><br/><br /><br/>
     <p
       style="
         font-family: 'Poppins', sans-serif;
